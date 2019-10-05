@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="container">
-		<div class='page-header'><h1>Q. (300/2)*2 =?</h1></div>
+		<div class='page-header'><h1>Q. 150*2 =?</h1></div>
 			<div>
 				<a href='02-to.jsp?ans=100' class='btn btn-default'>100</a>
 				<a href='02-to.jsp?ans=200' class='btn btn-primary'>200</a>
