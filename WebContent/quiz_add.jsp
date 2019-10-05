@@ -13,27 +13,27 @@
 </head>
 <body>
 	<div class="container">
-		<h1 class="page-header">퀴즈추가</h1>
+		<h1 class="page-header">퀴즈추가해주세요</h1>
 		<form name="myform" method="post" action="quiz_add_ok.jsp">
 
 			<div class="form-group">
-				<label for="quizans">종류</label>
+				<label for="quizans">종류추가해주세요</label>
 				<input type="text" name="quizans" id="quizans" class="form-control" />
 			</div>
 		
 		
 			<div class="form-group">
-				<label for="quizexp">퀴즈설명</label>
+				<label for="quizexp">퀴즈설명입니다</label>
 				<input type="text" name="quizexp" id="quizexp" class="form-control" />
 			</div>
 
 			<div class="form-group">
-				<label for="quizans">정답</label>
+				<label for="quizans">정답입니다</label>
 				<input type="text" name="quizans" id="quizans" class="form-control" />
 			</div>
 
 			<button type="submit" class="btn btn-primary btn-block">
-				완료</button>
+				완료되었습니다.</button>
 	    </form>
 	</div>
 </body>
