@@ -1,0 +1,13 @@
+git config --global user.name "yaongi"
+git config --global user.name "zkzk"
+git config --global user.email "wkqk89@gmail.com"
+git config --global core.precompseunicode true
+git config --global core.quotepath false
+git clone https://github.com/sumin-Jo/hellogit.git
+git clone git@github.com:sumin-Jo/hellogit
+C:\User\user\Decktop\workspace\HelloWorld
+C:\User\zkzk\Desktop\workspace\HelloWorld
+git init
+git remote add origin https://github.com/sumin-Jo/hellogit.git
+git pull origin master
+git add --all
