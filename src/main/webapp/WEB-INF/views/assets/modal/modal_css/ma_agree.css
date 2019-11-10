@@ -1,0 +1,323 @@
+@charset "utf-8";
+
+/** hheader */
+.modaltop {
+	width: 600px;
+	background-color: white;
+	z-index: 1001;
+	position: relative;
+	 	transition: width 300ms ease-in-out 0s;
+	 	margin-top: 8%;
+	border-radius: 0px;
+	height: 90px;
+	border: 0;
+}
+
+/** 맨 위 상단의 약관동의  */
+.modal-title1 {
+	color: rgb(34, 34, 34);
+	font-size: 22px;
+	padding: 25px;
+}
+
+/** 모델창 위치 */
+.modaltop {
+	margin: 0 auto;
+}
+
+/** Modal .modal-content의 div */
+ .agreelove {
+	 	width: 600px;
+	 	background-color: white;
+	 	position: relative;
+	 	z-index: 1001;
+	 	margin: 50px auto;
+	 	transition: width 300ms ease-in-out 0s;
+	border-radius: 0px;
+	height : 783px;
+	border: 0;
+	/**margin-bottom: 100px; */
+    }
+
+/** 닫기버튼 */
+    .btnclose {
+ 	   	width: 30px;
+ 	   	height: 30px;
+ 	   	background-color: transparent ;
+ 	   	position: absolute;
+ 	   	top: 25px;
+ 	   	right: 30px;
+ 	   	border-width: 0px;
+ 	   	border-style: initial;
+ 	   	border-color: initial;
+ 	   	border-image: initial;
+    }
+   
+    .btnclose > svg {
+ 	   position: absolute;
+ 	   top: 0px;
+ 	   left: 0px;
+    }
+   
+    svg[Attributes Style] {
+ 	   width: 30;
+ 	   height: 30;
+    }
+   
+    g[Attributes Style] {
+ 	   fill: none;
+ 	   fill-rule: evenodd;
+ 	   transform: translate(1, 1);
+    }
+   
+    .btnclose > svg .Circle {
+ 	   fill: rgb(255, 255, 255);
+ 	   stroke: rgb(151, 151, 151);
+ 	   opacity: 0.3;
+    }
+   
+    circle[Attributes Style] {
+	    cx: 15;
+	    cy: 15;
+	    r: 15;
+    }
+   
+	.btnclose > svg .Close {
+	 stroke: rgb(35, 45, 74);
+	}
+	
+	.btnclose > svg .Close {
+	 stroke: rgb(35, 45, 74);
+	}
+	
+	.btnclose > svg:hover .Circle {
+	 opacity: 0.6;
+	}
+
+
+.radius {
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+/** 동의박스 제어  */
+.agpbox {
+	padding-bottom: 20px;
+}
+
+.pad {
+	padding-bottom: 0px;
+}
+
+.agpbox > #check1 {
+	width : 30px;
+	height : 30px;
+	float : right;
+}
+/** 동의하기 체크 이미지*/
+#lnMlai > #check2 {
+	width : 30px;
+	height : 30px;
+}
+
+.p3 {
+    font-size: 13px;
+	margin: 0.0px 0.0px 0.0px 0.0px;
+    line-height: 20px;
+    color: #212121;
+    -webkit-text-stroke: #212121;
+}
+span.s1 {
+    font-kerning: none;
+}
+.p1 {
+    font-size: 14px;
+}
+
+.ul1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+li.li3, li.li5 {
+    font-size: 13px;
+    margin: 0.0px 0.0px 5.0px 0.0px;
+    color: #212121;
+    -webkit-text-stroke: #212121;
+}
+
+
+/** 회색박스 속 폰트 제어*/
+.whcbox {
+	font-size: 13px;
+	margin: 0.0px 0.0px 0.0px 0.0px;
+    line-height: 20px;
+    color: #212121;
+    -webkit-text-stroke: #21212
+}
+
+.whc > b {
+	margin-bottom : 20px;
+}
+
+/** 회색박스 여백 제어 */
+.lReCa {
+    width: 100%;
+    height: 120px;
+    background-color: rgb(244, 244, 244);
+    padding: 15px 0px 15px 15px;
+    white-space: nomal;
+	overflow-y: scroll;
+}
+
+/** 닫는 버튼 동그라미로 */
+.radius {
+	border-radius: 50%;
+	border: 1px black;
+	background-color: #fff;
+}
+
+.modal-body1 {
+	position: relative;
+	padding: 0 15px 15px 15px;
+}
+
+#pin1, #pin2, #pin3 {
+	width: 90px;
+}
+
+#updown {
+	margin: 15px;
+}
+
+#downp {
+	width: 400px;
+}
+
+#ftcl {
+	color: rgb(57, 107, 243);
+	display: inline-black;
+}
+
+.whp {
+	width: 480px;
+	height: 120px;
+	white-space: nomal;
+	overflow-y: scroll;
+	background-color: #eee;
+}
+
+#lnMlai {
+	width: 100%;
+	height: 45px;
+	text-align: center;
+}
+
+.modal-fet .joinbutton {
+	width: 610px;
+	height:
+}
+
+.btn {
+	border-radius: 0px;
+}
+
+.modal-fet .btn-colordown {
+	color: white;
+	font-size: 17px;
+	background-color: rgb(26, 90, 232);
+	width : 600px;
+	height: 70px;
+	position : relative;
+	top: 10px;
+}
+
+#img {
+	margin-left: 150px;
+}
+
+
+/** 모두 동의합니다 */
+.all {
+	text-align: center;
+	margin: auto;
+	display: inline-block;
+}
+
+/* 확인창 */
+.click-to-join {
+	display: block;
+	width: auto;
+	text-align: center;
+	line-height: 70px;
+	outline: none;
+}
+
+/** 부모스크롤 없애기 */
+/* .agreebody {
+overflow:hidden; 
+height: 100%;
+width: 100%;
+}	 */
+
+
+.chimg2 {
+	box-sizing: border-box;
+	color: -internal-root-color;
+}
+
+/** 텍스트와 버튼 크기 박스 */
+.stary {
+	display: inline-block;
+}
+
+.stary .p {
+	display: inline-black;
+	width: 300px;
+	margin-top: 10px;
+	font-size: 15px;
+}
+
+/** 버튼 이미지 */
+/** 버튼 */
+.actionbutton {
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-color: white;
+	margin-left: 505px;
+	border: 0px;
+}
+
+.actionbutton:focus {
+	outline: none;
+} 
+
+.buttonimg:focus {
+	outline: none;
+} 
+
+.buttonimg {
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	margin-right: 10px; 
+}
+
+.actionbuttonfinal {
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-color: white;
+	border: 0px;
+}
+
+.buttonimgfinal {
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	margin-right: 10px; 
+}
+
+
+

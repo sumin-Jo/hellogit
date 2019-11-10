@@ -1,0 +1,810 @@
+@charset "utf-8";
+
+a {
+	color: rgb(136, 136, 136);
+}
+
+/* 푸른색바의 오른쪽 3개 묶음*/
+#plrt {
+	display: inline-block;
+	float: right;
+}
+
+/* 중앙영역 전체면적 맞추기*/
+#content {
+	width: 1200px;
+	min-height: auto;
+	margin: auto;
+}
+
+/* 매물종류 & 전용면적 위치*/
+#box1 {
+	width: 100%;
+	height: 105px;
+	padding: 40px 0px 30px 0px;
+}
+
+/** 상단의 전용면적  h1*/
+#chnum {
+	line-height: 5px;
+	font-size: 30px;
+}
+
+/** 상단의 전월세 금액*/
+.monthman {
+	line-height: 5px;
+	font-size: 30px;
+}
+
+/*좋아요 헤더 하트 토글*/
+.recent-div9 {
+	width: 22px;
+	height: 22px;
+	position: relative;
+	bottom:-0.5px;
+}
+.recent-div9.off {
+	background: url(ma_img/blacklv.svg) center center/cover;
+	display: inline-block;
+}
+
+.recent-div9.on {
+	background: url(ma_img/blacklv-on.svg) center center/cover;
+	display: inline-block;
+}
+
+/*좋아요 갯수 카운트 글씨 수정*/
+#lkct {
+	font-size: 16.5px;
+	position : relative;
+	bottom : 5px;
+}
+
+/**상단의 매물종류(원룸) 위치 조정*/
+.abc {
+	width: 230px;
+	height: 50px;
+	border-right: 1px solid rgb(235, 235, 235);
+	margin-top: 10px;
+}
+
+/** 아이콘 리스트*/
+.dotsize {
+	width: 5px;
+	height: 5px;
+	margin : 2px;
+	position: relative;
+	bottom : 5px;
+}
+
+.linkimg {
+	padding:0px;
+	border-style:none;
+	background-color:white;
+	margin : 5px;
+	position:relative;
+	bottom : 4.5px;
+}
+
+.notce {
+	padding:0px;
+	border-style:none;
+	background-color:white;
+	margin : 5px;
+	position:relative;
+	bottom : 4.5px;
+}
+
+.linksize {
+	width: 23px;
+	height: 23px;
+}
+
+.siren{
+	width: 22px;
+	height: 22px;
+}
+
+.greyfont1 {
+	color: #505050;
+	font-size: 14px;
+	position: relative;
+	bottom: 20px;
+}
+
+.greyfontwon1 {
+	color: #505050;
+	font-size: 14px;
+}
+
+.greyfontnm1 {
+	color: #505050;
+	font-size: 14px;
+}
+
+#month {
+	margin-left: 30px;
+}
+
+/** 평수바꾸기 버튼 */
+.chbt {
+	width: 40px;
+	height: 30px;
+	font-size: 12px;
+	background-color: white;
+	border-style: solid;
+	border-color: rgb(213, 213, 213);
+	border-width: 1px;
+	border-radius: 3px;
+	position: relative;
+	left: 120px;
+	bottom: 17px;
+}
+
+/**빌보드 차트 data1 안보이기*/
+.bb-legend-item {
+	display : none;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active,
+	.btn-primary.active, .open .dropdown-toggle.btn-primary {
+	background-color: #fff;
+	border: 1px solid #000;
+}
+
+#iconlist {
+	width: 100%;
+	height: 20px;
+	font-size: 21px;
+	display: inline-block;
+}
+
+/**방주인 ~~님*/
+.honame {
+	font-weight: bold;
+	padding-top: 0px;
+	position: relative;
+	top: 16px;
+	right: 120px;
+}
+/*문의하기 메일아이콘 */
+.mailsize {
+	width: 20px;
+	height: 20px;
+	position:relative;
+	right: 4.1px;
+	bottom : 1.3px;
+}
+.que {
+	font-size: 14px;
+	color:black;
+}
+/** 문의하기 버튼 */
+li .grml {
+	width: 116px;
+	height: 38px;
+	background-color: white;
+	border-style: solid;
+	border-color: rgb(213, 213, 213);
+	border-width: 1px;
+	border-radius: 18px;
+	position: relative;
+	bottom: 10px;
+}
+.eTgAil {
+	width: 100%;
+	height: 36px;
+	background-color: rgb(54, 101, 206);
+	margin-top: 20px;
+}
+
+.eTgAil::after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.gknGpv {
+	float: left;
+	height: 36px;
+	color: rgb(255, 255, 255);
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 36px;
+	background-color: rgb(6, 73, 192);
+	padding: 0px 20px 0px 15px;
+}
+
+p {
+	display: block;
+	margin: 0px;
+}
+
+.cETKtB {
+	float: left;
+	color: rgb(255, 255, 255);
+	font-size: 13px;
+	font-weight: 400;
+	position: relative;
+	padding: 6px 0px 0px 17px;
+}
+
+.gknGpv>span {
+	margin-left: 3px;
+	color: rgb(165, 194, 245);
+	font-weight: 400;
+}
+
+.mola {
+	color: rgb(6, 73, 192);
+	background-color: rgb(54, 101, 206);
+	border-style: none;
+}
+
+.mola img {
+	position: relative;
+	top: 1px;
+	width: 20px;
+	height: 25px;
+}
+
+.iuNQqL {
+	width: 100%;
+	height: px;
+	border-top: 2px solid rgb(34, 34, 34);
+}
+
+.iuNQqL>li {
+	float: left;
+	width: 25%;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+.gWdVQs::before {
+	content: "·";
+	float: left;
+	color: rgb(34, 34, 34);
+	margin-right: 7px;
+}
+
+.gPsGgb {
+	float: left;
+	width: 100px;
+	color: rgb(136, 136, 136);
+	font-size: 14px;
+}
+
+.bHPFKV {
+	width: 40px;
+	height: 23px;
+	font-size: 10px;
+	background-color: white;
+	border-style: solid;
+	border-color: rgb(213, 213, 213);
+	border-width: 1px;
+	border-radius: 3px;
+	position: relative;
+	left: 10px;
+	top: 5px;
+}
+
+.bHPFKV>span {
+	color: rgb(34, 34, 34);
+	font-size: 11px;
+	position: absolute;
+	top: 45%;
+	right: 8px;
+	transform: translateY(-50%);
+}
+
+.confirmsm {
+	color: white;
+}
+
+.bigviewul {
+	width: 100%;
+	height: 480px;
+	padding-top: 30px;
+}
+
+.bigviewigli {
+	width: 620px;
+	min-height: 60px;
+	float: left;
+}
+
+.bigviewigli img {
+	width: 620px;
+	height: 420px;
+}
+
+.bigviewiglism {
+	width: 280px;
+	height: 210px;
+	float: left;
+}
+
+.bigviewiglism img {
+	width: 300px;
+	height: 210px;
+	display: inline-block;
+}
+
+#explanall {
+	width: 1200px;
+	min-height: 260px; /*추가*/ 
+	padding-bottom : 130px; /*추가*/
+	height: 210px;
+	margin: auto;
+	padding-bottom: 130px;
+}
+
+#bigexplan {
+	width: 600px;
+	min-height: 260px; /*추가*/ 
+	padding-bottom : 130px; /*추가*/
+	float: left;
+}
+
+#smallexplan {
+	width: 600px;
+	min-height: 260px; /*추가*/ 
+	padding-bottom : 130px; /*추가*/
+	float: left;
+}
+/*------------------------------------------------*/
+#smallexplan > div {
+   overflow: hidden;
+   /* -webkit-transition: all 0.5s;
+   -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+   transition: height 400ms ease 0.5s !important; */
+}
+#smallexplan > div.explan-on {
+   height: auto;
+   /* -webkit-transition: all 0.5s;
+   transition: height 400ms ease 0.5s;
+   -moz-transition: all 0.5s;
+    -o-transition: all 0.5s; */
+}
+#smallexplan > div.explan-off {
+   height: 130px;
+  /*  -webkit-transition: all 0.5s;
+   transition: height 400ms ease 0.5s;
+   -moz-transition: all 0.5s;
+    -o-transition: all 0.5s; */ 
+}
+/*------------------------------------------------*/
+.smexp {
+	font-size: 16px;
+}
+
+.explan1 {
+	font-size: 26px;
+}
+
+.jQYbpN {
+	position : relative;
+	top : 30px;
+	color: rgb(20, 118, 252);
+	font-size: 15px;
+	border-style: none;
+	background-color: white;
+}
+
+.icngbl:focus {
+	outline:none;
+}
+
+/*--- 움직이는 스크롤 헤더 시작 ---*/
+
+/**블루바 새롭게 만듦*/
+#bbblue {
+	min-width:2600px;
+	height:90px;
+	background:rgb(20, 118, 252);
+	position: relative;
+    right: 650px;
+}
+
+/* #bluebar {
+	margin: auto;
+	width: 100%;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 7px 0px, rgba(0, 0, 0, 0.08) 0px
+		2px 2px 0px;
+	background-color: rgb(20, 118, 252);
+	position: fixed;
+	z-index: 3;
+	transition: top 0.2s ease-in-out;
+	display : none;
+} */
+
+.blicose {
+	margin : 1px;
+}
+
+/**-----------------
+	블루바 고정작업 시작
+---------------------
+*/
+#fxed {
+	margin : auto;
+	position: fixed;
+	bottom: 500px;
+	z-index: 3;
+	display:none;
+	visibility : visible;
+	-webkit-transition:all 0.2s ease-in;
+}
+/**-----------------
+	블루바 고정작업 끝
+---------------------
+*/
+
+/*파란색 헤더 하트 토글*/
+.recent-div8 {
+	margin-left:20px;
+	position:relative;
+	top:30px;
+	width: 30px;
+	height: 30px;
+}
+
+.recent-div8.off {
+	background: url(ma_img/like-on.svg) center center/cover;
+	display: inline-block;
+}
+
+.recent-div8.on {
+	background: url(ma_img/like.svg) center center/cover;
+	display: inline-block;
+}
+
+.cntlk {
+	color : white;
+	margin: 10px;
+	position: relative;
+	top: 20px;
+}
+
+#lol {
+	width: 1200px;
+	margin : auto;
+}
+
+.lvc {
+	margin: auto;
+	padding-right: 15px;
+}
+
+.textht {
+	color: white;
+	line-height: 90px;
+}
+
+.texthth1 {
+	color: #fff;
+	font-size: 25px;
+	font-weight: 400px;
+	text-align: center;
+}
+
+.icngbl{
+	background-color:rgb(20, 118, 252);
+	border-style:none;
+}
+
+.texthtlvc {
+	color: white;
+}
+
+.icngbl > img {
+	background-color:rgb(20, 118, 252);
+	margin : 4px;
+	width: 26.5px;
+	height: 26.5px;
+	position:relative;
+	top : 18px;
+}
+
+.linksize1 {
+	width: 23px;
+	height: 23px;
+}
+
+.skyblue {
+	color: rgb(255, 255, 255);
+	font-size: 16px;
+	opacity: 0.7;
+}
+
+/**문의하기 버튼 모양잡기*/
+.inbl {
+	height: 44px;
+	color: rgb(0, 108, 255);
+	font-size: 14px;
+	font-weight: 400;
+	background-color: rgb(255, 255, 255);
+	position: relative;
+	bottom: -23px;
+	padding: 0px 23px;
+	border-width: 0px;
+	border-style: initial;
+	border-color: initial;
+	border-image: initial;
+	border-radius: 44px;
+}
+
+/**버튼 클릭하면 생기는 하늘색 테두리 지움*/
+.textht:focus {
+	outline:none;
+}
+
+.quest {
+	position: relative;
+	bottom: 23px;
+	color: rgb(0, 108, 255);
+}
+
+.nowqt {
+	color: white;
+	margin: 15px;
+	padding-top: 15px;
+	font-size: 22px;
+}
+
+/*--- 움직이는 스크롤 헤더 끝 ---*/
+.xOEdU {
+	width: 1200px;
+	height: 58px;
+	background-color: rgb(255, 255, 255);
+	position: relative;
+	z-index: 2;
+	display: table;
+	table-layout: fixed;
+	border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.eYDrrB {
+	display: table-cell;
+	color: rgb(136, 136, 136);
+	font-size: 15px;
+	text-align: center;
+	cursor: pointer;
+	vertical-align: middle;
+}
+/* 다방면 스코어 시작
+*-------------------------------------*/
+.kBQneM {
+	width: 1180px;
+	position: relative;
+	margin: 0px auto;
+}
+
+.dbrfvk {
+	color: rgb(34, 34, 34);
+	font-size: 28px;
+	font-weight: 400;
+	text-align: center;
+	line-height: 41px;
+}
+
+.fCword {
+	padding-top: 40px;
+	text-align: center;
+	position: relative;
+}
+
+.fCword>h1 {
+	color: rgb(21, 100, 249);
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 41px;
+}
+
+.kZTRnS {
+	width: 100%;
+}
+
+.fCword>p {
+	margin-bottom: 80px;
+	color: rgb(68, 68, 68);
+	font-size: 19px;
+	line-height: 28px;
+}
+
+/* 가격정보 시작
+-------------------------------------*/
+.jFMhNO {
+	padding-top: 100px;
+	padding-bottom: 120px;
+	border-top: 1px solid rgb(221, 221, 221);
+}
+
+.GYLAC {
+	color: rgb(34, 34, 34);
+	font-size: 28px;
+	font-weight: 400;
+	text-align: center;
+	line-height: 41px;
+}
+
+.smhead {
+	position: fixed;
+	bottom: 100p x;
+	z-index: 10;
+	transition: top 0.2s ease-in-out;
+}
+
+/* 가격정보의 표
+*------------------------------*/
+.taln {
+	margin-top: 30px;
+}
+
+.bdlnthd {
+	border-top: 1px solid rgb(204, 204, 204);
+}
+
+.tabdln {
+	width: 850px;
+	text-align: center;
+	margin: auto;
+	padding-top: 30px;
+}
+
+.bdlntr {
+	width: 300px;
+	text-align: center;
+}
+
+.bdlnth {
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	border-right: 1px solid rgb(238, 238, 238);
+} 
+/*중앙에만 보더*/
+.bdlnth:last-child {
+	border-style: none;
+} /*오른쪽 보더 없앰*/
+.bdlntd:last-child {
+	border-right: none;
+}
+
+.bdlntd {
+	width: 50px;
+	height: 100px;
+	text-align: center;
+	border-right: 1px solid rgb(238, 238, 238);
+	border-top: 1px solid rgb(238, 238, 238);
+	border-bottom: 1px solid rgb(204, 204, 204);
+}
+/* option 이미지들 시작
+  *-----------------------*/
+.dDctva {
+	width: 1180px;
+	margin-top: 32px;
+	padding: 0px 104px;
+}
+
+.gqtsIc:nth-child(1), .gqtsIc:nth-child(2), .gqtsIc:nth-child(3),
+	.gqtsIc:nth-child(4), .gqtsIc:nth-child(5), .gqtsIc:nth-child(6) {
+	margin-top: 0px;
+}
+
+.gqtsIc {
+	float: left;
+	width: 162px;
+	height: 70px;
+	margin-top: 40px;
+}
+
+.dNeTFF {
+	width: 40px;
+	height: 40px;
+	margin: 0px auto;
+	background: url(../../assets/ico/dtoption/aircondition.svg) center
+		center/cover no-repeat;
+}
+
+.gqtsIc>p {
+	margin-top: 5px;
+	color: rgb(68, 68, 68);
+	font-size: 15px;
+	line-height: 25px;
+	text-align: center;
+}
+
+.bisIQz {
+	width: 40px;
+	height: 40px;
+	margin: 0px auto;
+	background: url(../../assets/ico/dtoption/laundry.svg) no-repeat;
+}
+
+.dDctva::after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.ecqNej {
+	width: 40px;
+	height: 40px;
+	margin: 0px auto;
+	background: url(../../assets/ico/dtoption/closet.svg) no-repeat;
+}
+
+.gdTorF {
+	width: 40px;
+	height: 40px;
+	margin: 0px auto;
+	background: url(../../assets/ico/dtoption/telv.svg) no-repeat;
+}
+
+.fuJjGK {
+	width: 40px;
+	height: 40px;
+	margin: 0px auto;
+	background: url(../../assets/ico/dtoption/shoes.svg) no-repeat;
+}
+
+.gdMhEY {
+	width: 40px;
+	height: 40px;
+	margin: 0px auto;
+	background: url(../../assets/ico/dtoption/refrigerator.svg) no-repeat;
+}
+
+.dQLnLP {
+	width: 40px;
+	height: 40px;
+	margin: 0px auto;
+	background: url(../../assets/ico/dtoption/gas.svg) no-repeat;
+}
+
+.krFgu {
+	width: 40px;
+	height: 40px;
+	margin: 0px auto;
+	background: url(../../assets/ico/dtoption/induction.svg) no-repeat;
+}
+
+.cnLAIn {
+	width: 40px;
+	height: 40px;
+	margin: 0px auto;
+	background: url(../../assets/ico/dtoption/microoven.svg) no-repeat;
+}
+
+.fkeEgq {
+	width: 40px;
+	height: 40px;
+	margin: 0px auto;
+	background: url(../../assets/ico/dtoption/doorlock.svg) no-repeat;
+}
+
+.iAeGhw {
+	width: 40px;
+	height: 40px;
+	margin: 0px auto;
+	background: url(../../assets/ico/dtoption/bidet.svg) no-repeat;
+}
+
+.mCsgX {
+	width: 40px;
+	height: 40px;
+	margin: 0px auto;
+	background: url(../../assets/ico/dtoption/bed.svg) no-repeat;
+}
+
+.gaOEWf {
+	width: 40px;
+	height: 40px;
+	margin: 0px auto;
+	background: url(../../assets/ico/dtoption/desk.svg) no-repeat;
+}
+/* option 이미지들 �

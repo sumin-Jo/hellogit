@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+	/* -------------------------------------------
+	|	find-password (header / content / footer)
+	-------------------------------------------- */
+
+	/* 공통부분 */
+
+	/* 전체박스 */
+	.findpwd-div {
+		width: 450px;
+		position: relative;
+		z-index: 1001;
+		overflow-x: hidden;
+		overflow-y: auto;
+		margin: 8% auto 0;
+		border: 0px;
+		border-radius: 0px;
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 18px -10px;
+	}
+	
+	/* 닫기 버튼 */
+	.close-button {
+		width: 32px;
+		height: 32px;
+		position: absolute;
+		top: 25px;
+		right: 30px;
+		background-color: transparent;
+		cursor: pointer;
+		border: 0px;
+		border-radius: 0;
+	}
+
+	/* svg 위치 */
+	.close-button > svg {
+    	position: absolute;
+    	top: 0px;
+    	left: 0px;
+	}
+
+	/* 동그라미 그리기 */
+	.close-button >svg .Circle {
+		fill: rgb(255, 255, 255);
+		stroke: rgb(151, 151, 151);
+		opacity: 0.3;
+	}
+
+	/* 칠해주기 */
+	.close-button > svg .Close {
+    	stroke: rgb(35, 45, 74);
+	}
+
+	/* -------------------------------------------
+	|	header
+	-------------------------------------------- */
+
+	/* 제목 - 비밀번호 찾기 */
+
+	.header-div {
+		padding-left: 30px;
+		width: 100%;
+		height: 80px;
+
+		border-bottom: 1px solid #eee;
+
+		
+	}
+
+	.header-div > h1 {
+		color: #222222;
+		font-size: 22px;
+		line-height: 80px;
+	}
+
+	/* -------------------------------------------
+	|	content div-p , div-input
+	-------------------------------------------- */
+
+	.content-div {
+		width: 100%;
+		padding: 30px 35px 50px;
+	}
+
+	.content-p {
+		margin-bottom: 20px;
+		color: #222222;
+		font-size: 16px;
+		line-height: 24px;
+		white-space: nowrap;
+	}
+
+	.content-input {
+		width: 100%;
+		height: 46px;
+		font-size: 15px;
+		padding: 0 15px;
+		outline: none;
+
+	}
+
+	/* -------------------------------------------
+	|	footer
+	-------------------------------------------- */
+
+	.footer-button {
+		width: 100%;
+		height: 70px;
+		color: white;
+		background-color: #1A5AE8;
+		outline: none;
+		border: 0px;
+	}

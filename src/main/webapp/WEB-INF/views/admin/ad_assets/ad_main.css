@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+#ad_main{
+	min-width:auto;
+}
+  /* ---------------------------------------
+ / 상단 부분
+
+  ---------------------------------------- */
+
+/* head 부분 크기 설정 */
+#header{
+    min-height: 250px;
+}
+
+  /* ---------------------------------------
+ / 본문 부분
+  ---------------------------------------- */
+
+/* title div 위치 크기 설정(절대값 기준) */
+.title{
+    position: absolute;
+    width:350px;
+    height:100px;
+    left: 250px;
+    top: 160px;
+    border-bottom : solid 2px gray;
+}
+/* title 이미지 설정 */
+.title > img{
+    position: absolute;
+    width : 100px;
+}
+/* title div 내 paragraph 위치 설정 */
+.title > p {
+    position: absolute;
+    top: 16px;
+    left: 100px;
+    font-size:28px;
+    margin-top: 40px;
+}
+/* 본문 크기 및 위치 설정 div 가운데 정렬 */
+#content{
+    width:auto;
+}
+#content > div {
+	margin:auto;
+	width: 900px;
+    padding-top: 15px;
+}
+
+/* 부트스트랩 컴포넌트 사용으로 인한 버튼 추가 설정 */
+#content > div >.btn{
+    font-size: 30px;
+    line-height: 190px;
+    margin:60px;
+    width:200px;
+    height: 200px;
+    background-color: #4383FF;
+}
+#content > div > div{
+    position: absolute;
+    text-decoration: none;
+    background-color: #4383FF;
+    display: inline-block;
+    font-size: 30px;
+    margin:60px;
+    width:200px;
+    height: 200px;
+    border-radius: 5px;
+}
+#dLabel > span:nth-child(1){
+	padding-left:40px;
+}
+#content > div > div>a{
+    text-decoration: none;
+    color:white;
+    display: block;
+    padding-top: 90px;
+}
+
+#content > div > div >ul{
+    width: 200px;
+}

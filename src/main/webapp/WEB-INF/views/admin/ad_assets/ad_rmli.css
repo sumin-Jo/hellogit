@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+#content { min-width: 1200px; }
+
+#content > div {
+	width: 1200px;
+	margin: auto;
+}
+
+#content .adm-header {
+	height: 80px;
+	margin-bottom: 15px;
+}
+
+#content h1 { 
+	float: left; 
+	font-size: 30px;
+}
+
+#content .adm {	float: right; }
+
+#content .adm > div { padding-top: 10px; }
+
+#content .input-group {	
+	width: 300px;
+	position: relative;
+}
+
+/* 검색바, 버튼들 우측 정렬 */
+.input-group { float: right; }
+.box { float: right; }
+
+.adm-radio, .adm-btn { float: left; }
+
+#content .adm-radio { line-height: 34px; margin-right: 10px; }
+
+#content .adm-radio label { margin-right: 10px; }

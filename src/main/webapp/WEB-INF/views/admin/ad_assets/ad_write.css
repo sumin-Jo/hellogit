@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+	/** content 전체폭 결정 */
+	#content { min-width: 1200px; }
+
+	#content > div {
+		width: 600px;
+		margin: auto;
+	}
+
+	#content {
+		padding bottom: 70px;
+	}
+
+
+	/** h1 글씨 위치 조정 */
+	#content .pick { padding: 70px 0 30px 0; }
+
+	#content .pick h1 {
+		border-bottom: 1px solid #eee;
+		width: 80%;
+		margin: auto;
+		padding-bottom: 30px;
+		font-size: 36px;
+		text-align: center;
+	}
+
+	/** 본문 부분 */
+	#content .input-group1 {
+		padding-bottom: 25px;
+	}
+
+	#content .input-group2 textarea {
+		width: 600px;
+		height: 300px;
+	}
+
+	/** 버튼 부분 */
+	#content .btn1 {
+		padding-top: 25px;
+	}
+
+	#content .btn {
+		margin-right: 10px;
+	}

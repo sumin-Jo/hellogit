@@ -1,0 +1,202 @@
+@charset "utf-8";
+
+/* 전체 모달 창 */
+.wholething {
+	width: 610px;
+	border: none;
+	border-radius: 0;
+	background-color: white;
+	position: relative;
+	z-index: 1001;
+	margin: 0 auto;
+	transition: width 300ms ease-in-out 0s;
+	margin-top: 8%;
+}
+
+/** 모달창 위치 */
+.modaltop {
+	margin: 60px auto;
+}
+
+/** 모달 헤더 text */
+.modal-header .modal-title {
+	font-size: 22px;
+	font-weight: bold;
+	line-height: 30px;
+}
+
+/** 닫는 버튼 동그라미로 */
+.radius {
+	border-radius: 50%;
+	border: 1px solid black; 
+	background-color: #fff;
+}
+
+/* 내용부분 */
+.padding {
+	padding: 30px 30px 20px 30px;
+	margin: 0;
+}
+
+/** 입력 폼 큰 단위 */
+.information {
+	width: 550px;
+	height: 46px;
+}
+
+.information2 {
+	margin-top: 20px;
+}
+
+/* 좌측 입력목록 제목 */
+p.subtitle {
+	display: block;
+	width: 100px;
+	height: 45px;
+	float: left;
+	line-height: 45px;
+}
+
+.input1 {
+	height: 46px;
+	display: block;
+	float: left;
+	padding: 0 15px;
+    width: 449px;
+}
+
+.select1 {
+	display: block;
+	float: left;
+	height: 46px;
+	padding: 0 15px;
+}
+
+/* 이름, 비밀번호, 비밀번호 확인 */
+.full-wid { width: 450px; }
+
+/* 이메일 */
+.information .email {
+	display: block;
+	float: left;
+	width: 106px;
+}
+
+.information .select-email {
+	width: 190px;
+}
+
+/* 휴대폰 번호 */
+.pin { width: 134px; }
+
+/* @, - */
+.wid {
+	float: left;
+	width: 24px;
+	line-height: 46px;
+	text-align: center;
+}
+
+/* 인증번호 버튼 */
+.btn-color {
+	color: #1564f9;
+	border: 1px solid #3185f8;
+	background-color: white;
+	width: 120px;
+	border-radius: 0;
+	height: 46px;
+	margin-left: 10px;
+}
+
+.btn-color:hover { color: #1564f9; }
+
+.number { width: 320px; }
+
+/* 회원가입 버튼 */
+.btn-colordown {
+	color: white;
+	background-color: rgb(26, 90, 232);
+	width: 100%;
+	height: 60px;
+}
+
+.buttonup:focus {
+	color: white;
+}
+
+.buttonup:checked {
+	color: white;
+}
+
+.buttonup:hover {
+	color: white;
+	font-size: 14px;
+	background-color: rgb(26, 90, 232);
+	width: 100%;
+	height: 60px;
+	position : relative;
+}
+
+.buttonup:target {
+	color: white;
+	font-size: 14px;
+	background-color: rgb(26, 90, 232);
+	width: 100%;
+	height: 60px;
+	position : relative;
+}
+
+/** 회원가입 높이 */
+.hheader {
+	height: 60px;
+	margin-top: 12px;
+	padding: 15px 15px 15px 30px;
+}
+
+.buttontlzl {
+	margin-top: 0px;
+	height: 60px;
+	width: 100%;
+}
+
+/* 이용약관 */
+.Information3 .p {
+	margin-top: 20px;
+	width: 100%;
+	font-size: 13px;
+}
+
+/** 인증번호 새로운 팝업창 */
+.requested {
+	width: 100px;
+	height: 300px;
+	margin: 300px 650px 300px 650px;
+}
+
+.modalbody {
+	width: 100px;
+	height: 200px;
+}
+
+/** 인증번호 sweetalert */
+.inclick {
+	position:absolute;
+	z-index: 3;
+}
+
+.buttonre:checked {
+	color: blue !important;
+	position : relative;
+}
+
+.buttonre:focus {
+	color: blue;
+	position : relative;
+}
+
+.buttonre:active {
+	color: blue;
+	position : relative;
+}
+
+

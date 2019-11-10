@@ -1,0 +1,916 @@
+@charset "utf-8";
+
+/*****************************************
+*	찜한방	
+*****************************************/
+
+
+/* 공통 부분 */
+
+html body #root {
+	width: 100%;
+}
+
+.parent-box {
+	width: 100%;
+    min-width: 1366px;
+    height: 100%;
+    position: relative;
+}
+
+/* ---------------------------------------
+| content1 - <타이틀 바>
+---------------------------------------- */
+
+.content1-title {
+	height: 53px;
+	margin-top: 70px;
+	color: #222222;
+	font-size: 34px;
+	font-weight: 400;
+	text-align: center;
+}
+
+/* ---------------------------------------
+| content2 - <네비게이션>
+---------------------------------------- */
+
+/* content2 전체박스 */
+.content2-d {
+	display: table;
+	height: 40px;
+	width: 1180px;
+	margin: 45px auto 0;
+
+}
+
+/* div - a 하위 목록 */
+.content2-d-a {
+	display: table-cell;
+    width: 50%;
+    color: rgb(136, 136, 136);
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+/* active 신기하게쓰네 */
+.content2-d-a.active{
+	color: rgb(34, 34, 34);
+    font-weight: 500;
+    border-bottom: 2px solid rgb(34, 34, 34);
+}
+
+/*****************************************
+* content3- <main 갤러리>
+*****************************************/
+
+/* 전체박스 */
+.gallery-wholebox {
+	width: 1180px;
+	min-height: 500px;
+	padding-top: 50px;
+	margin: 0 auto;	
+}
+
+/* div (총 n개의 최근본 방이 있습니다.) */
+/* div 안에 <p>태그 */
+.count-p {
+	height: 24px;
+	line-height: 24px;
+	font-size: 15px;
+	color: #666666;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+.count-p span {
+	color: #1564F9;
+}
+
+/* ---------------------------------------
+|	content3-갤러리
+---------------------------------------- */
+/* ---------------------------------------
+|	완료된 매물
+---------------------------------------- */
+
+/* 거래완료 *//* 비공개 부모 박스 */
+/* 비공개 거래완료 부모박스 같음 */
+
+/* 큰부모 박스 */
+/* 매물 하나 전체를 흐릿하게 만듬 */
+.complete-whcover {
+	width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* 작은부모 박스 */
+.complete-smcover {
+	display: table-cell;
+    width: 280px;
+    height: 186px;
+    box-shadow: rgba(16, 25, 42, 0.1) 0px 1px 5px 0px;
+    background-color: rgba(255, 255, 255, 0.6);
+    vertical-align: middle;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(96, 163, 255);
+    border-image: initial;
+    border-radius: 3px;
+}
+
+.complete-h1 {
+	height: 18px;
+    margin-bottom: 8px;
+    color: rgb(49, 133, 248);
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.complete-p {
+	height: 20px;
+    color: rgb(49, 133, 248);
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.complete-plusbtn {
+	width: 36px;
+    height: 36px;
+    margin: 15px auto 0px;
+    background: url(ma_img/plusbtn.svg) center center / cover no-repeat;
+}
+
+
+/* ---------------------------------------
+| content3-갤러리 메인 시작하기
+---------------------------------------- */
+
+/* 메인갤러리 시작 */
+.gallery-ul {
+	width: 100%;
+	min-height: 321px;
+}
+
+/* 각 박스의 마진 */
+.gallery-li {
+	position: relative;
+	float: left;
+	width: 280px;
+	height: 321px;
+	margin-bottom: 60px;
+	background-color: white;
+	border-radius: 5px;	
+}
+
+/* rof */
+.gallery-li + .gallery-li {
+	margin-left: 20px;
+}
+
+.gallery-li:nth-child(4n+1) {
+    margin-left: 0px;
+}
+
+/* 각 박스의 부모박스 */
+
+.gallery-d1 {
+	height: 321px;
+	position: relative;
+}
+
+/* 각 박스 링크 */
+.gallery-d1-a{
+	display: block;
+}
+
+/* 사진 담는 박스 */
+.gallery-d2-pic{
+	width: 100%;
+    height: 186px;
+    margin-bottom: 12px;
+    background-color: rgb(239, 240, 242);
+    position: relative;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+/* height 100%를 줘야 함 */
+.gallery-d2-pic:before {
+	content: "";
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    background: url(ma_img/comp1.jpeg) center center / cover no-repeat;
+}
+
+.gallery-d2-pic:after {
+	content: "";
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+
+/* 확인매물 박스 */
+.gallery-d2-confirm {
+	height: 21px;
+	margin-bottom: 3px;
+}
+
+/* 확인매물 내부 박스 */
+.gallery-d3-confirm {
+	display: inline-block;
+	height: 21px;
+	line-height: 19px;
+	vertical-align: top;
+	padding: 0 5px;
+	border-width: 1px;
+    border-style: solid;
+    border-color: rgb(168, 193, 252);
+    border-image: initial;
+    border-radius: 2px;
+}
+
+.gallery-d3-confirm > span {
+	font-weight: 700;
+}
+
+.gallery-d3-confirm > span, .gallery-d3-confirm > font {
+    display: inline-block;
+    color: rgb(50, 108, 249);
+    font-size: 11px;
+    white-space: nowrap;
+    position: relative;
+    bottom: 2px;
+}
+
+/* 확인매물 아래 - 룸 타입 p1 */
+.gallery-p1 {
+	font-size: 13px !important;
+	font-weight: 400 !important;
+}
+
+.gallery-p2 {
+	color: rgb(34, 34, 34);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    margin: 3px 0px 6px;
+}
+
+.gallery-p2 > span {
+	vertical-align: middle;
+	font-size: 20px;
+}
+
+.gallery-p-common {
+	width: 100%;
+    color: rgb(102, 102, 102);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+/* button - heart */
+.gallery-heart-d2 {
+	width: 36px;
+    position: absolute;
+    top: 3px;
+    right: 7px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.gallery-heart-d3 {
+	width: 32px;
+    height: 30px;
+    margin: 0px auto;
+    background: url(ma_img/fullheart.svg) center center / cover;
+}
+
+
+
+
+
+
+
+/* ---------------------------------------
+| content - page
+---------------------------------------- */
+
+.page-d1 {
+	padding-bottom: 150px;
+}
+
+.page-d1 > div {
+	padding-top: 20px;
+}
+
+.page-d2 {
+	text-align: center;
+}
+
+.page-d3 {
+	display: inline-block;
+    height: 32px;
+}
+
+.page-d3-btn1 {
+	float: left;
+    width: 32px;
+    height: 32px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    padding: 0px;
+    margin: 0px 18px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(170, 170, 170);
+    border-image: initial;
+    border-radius: 50%;
+}
+
+.page-d3-btn1 > svg {
+	left: 49%;
+}
+
+.page-d3-ul {
+	float: left;
+}
+
+.page-d3-ul > li + li {
+    margin-left: 10px;
+}
+
+.page-d3-btn2{
+	float: left;
+    width: 32px;
+    height: 32px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    padding: 0px;
+    margin: 0px 18px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(170, 170, 170);
+    border-image: initial;
+    border-radius: 50%;
+}
+
+.page-d3-ul li {
+	display: inline-table;
+    width: 32px;
+    height: 32px;
+}
+
+.page-ul-a-clicked {
+	display: table-cell;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+    color: rgb(255, 255, 255);
+    background-color: rgb(20, 118, 252);
+    cursor: default;
+    border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+    border-radius: 50%;
+    border-color: rgb(20, 118, 252);
+}
+
+.page-ul-a-clicked:hover {
+	color: white;
+}
+
+.page-ul-a-unclicked {
+	display: table-cell;
+    width: 100%;
+    height: 100%;
+    color: rgb(20, 118, 252);
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    border-radius: 50%;
+
+}
+
+.page-ul-a-unclicked:hover {
+    border-color: rgb(20, 118, 252);
+}
+
+
+
+/* ---------------------------------------
+| content - button to compare
+---------------------------------------- */
+
+/* 비교하기 버튼 */
+.btn-compare {
+	width: 140px;
+    height: 56px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    text-align: center;
+    box-shadow: rgba(6, 68, 192, 0.82) 0px 15px 30px -14px;
+    background-color: rgb(6, 73, 192);
+    position: fixed;
+    right: 30px;
+    z-index: 10;
+    bottom: 280px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 30px;
+}
+
+/* 비교하기 전체 박스 1번째 부모 - 마진 */
+.compare-d1 {
+	width: 100%;
+    min-width: 1366px;
+    height: 90px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px -1px 6px 0px;
+    background-color: rgb(24, 105, 216);
+    position: fixed;
+    z-index: 10;
+    margin: 0px auto;
+}
+
+/* 비교하기 전체 박스 2번째 부모 - 테이블화 */
+.compare-d2 {
+	display: table;
+    width: 1180px;
+    height: 100%;
+    margin: 0px auto;
+}
+
+/* 비교하기 바 - 버튼 맨앞 설명 */
+
+.compare-exp-d3 {
+	display: table-cell;
+    width: 213px;
+    padding-left: 0px;
+    position: relative;
+    vertical-align: middle;
+}
+
+/* 두번째 줄부터 왼쪽 라인 긋기 */
+.compare-exp-d3 + div {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* 1번째 p태그 */
+.compare-exp-p1 {
+	height: 27px;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
+}
+
+/* 2번째 p태그 */
+.compare-exp-p2 {
+	display: inline-block;
+    height: 32px;
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    line-height: 32px;
+    text-align: left;
+    vertical-align: middle;
+    opacity: 0.6;
+}
+
+/* 비교하기 바 - 버튼 2,3,4 비교버튼 */
+
+.compare-select {
+	display: table-cell;
+    width: 241px;
+    padding-left: 16px;
+    position: relative;
+    vertical-align: middle;
+}
+
+.compare-select-d {
+	display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.compare-select-p {
+	display: inline-block;
+    height: 32px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 32px;
+    text-align: left;
+    vertical-align: middle;
+    opacity: 0.6;
+}
+
+/* 버튼을 담고있는 박스 */
+.compare-btn-box {
+	display: table-cell;
+    width: 238px;
+    padding-left: 30px;
+    position: relative;
+    vertical-align: middle;
+}
+
+/* 버튼박스 - 취소하기 버튼 */
+.compare-btn-cancel { 
+	width: 80px;
+    height: 45px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 2px 0px;
+    background-color: rgb(24, 105, 216);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-image: initial; 
+}
+
+/* 버튼박스 - 비교하기 버튼 */
+.compare-btn-compare {
+	width: 120px;
+    height: 45px;
+    
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 2px 0px;
+    background-color: rgb(24, 105, 216);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-image: initial;
+}
+
+/* 비교하기 내부 <a> tag */
+.dis-block {
+	display: block;
+	width: auto;
+	color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+	
+}
+
+/* 부트(스)트랩 기능 제거 */
+.dis-block:hover, .dis-block:focus {
+	color: white;
+}
+
+
+/* ---------------------------------------
+| "방 비교하기" 버튼 눌렀을 때 체크박스 (".btn-compare")
+---------------------------------------- */
+
+/* 체크박스 나타날 위치 */
+.comp-chkbox-d {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 1;
+}
+
+/* 체크박스 클릭 가능하도록 표시 */
+.comp-chkbox-l {
+	display: block;
+	height: 22px;
+	padding-left: 23px;
+	position: relative;
+	cursor: pointer;
+}
+
+/* 체크박스 input 태그 기능, 안보이도록 */
+.comp-chkbox-i {
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+/* 체크되었을 때 꾸미기 */
+.comp-chkbox-i:checked + .comp-chkbox-s {
+    background-color: rgb(0, 108, 255);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(0, 108, 255);
+    border-image: initial;
+}
+
+/* 체크박스 안에 꾸미기 */
+.comp-chkbox-l .comp-chkbox-s {
+    float: left;
+    width: 22px;
+    height: 22px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(221, 221, 221);
+    border-image: initial;
+    border-radius: 3px;
+}
+
+/* 체크박스 안에 꾸미기 */
+.comp-chkbox-i:checked + .comp-chkbox-s::after {
+    content: "";
+    display: block;
+    width: 47%;
+    height: 27%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transform-origin: 30% 35%;
+    border-left: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
+    box-sizing: unset;
+}
+
+
+/* 비교하기 바 - 체크박스 클릭시 꾸미기 CSS */
+
+/* 새로 생긴 비교하기바 꾸미기 - span 태그 */
+.compbar-newspan {
+    height: 22px;
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    line-height: 22px;
+    text-align: left;
+    opacity: 0.6;
+}
+
+/* 새로 생긴 비교하기바 꾸미기 - p태그 */
+.compbar-newp {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
+}
+
+/* 새로 생긴 비교하기바 꾸미기 - 닫기버튼 */
+.compbar-newbtn {
+    width: 22px;
+    height: 22px;
+    background-color: rgb(11, 81, 178);
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 0px;
+    padding: 0;
+}
+
+/* 새로 생긴 비교하기바 꾸미기 - 닫기버튼 after속성 */
+.compbar-newbtn::after {
+    width: 1px;
+    height: 11.3137px;
+}
+
+/* 새로 생긴 비교하기바 꾸미기 - 닫기버튼 before속성 */
+.compbar-newbtn::before {
+    width: 11.3137px;
+    height: 1px;
+}
+
+/* 새로 생긴 비교하기바 꾸미기 - before,after 공통속성 */
+.compbar-newbtn::before, .compbar-newbtn::after {
+    content: "";
+    background-color: rgb(146, 175, 255);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/******************************************************
+* modal * 거래완료, 비공개된 매물 비슷한방 보여주기 modal 		  *
+******************************************************/
+
+/* modal 바깥여백 조절 */
+.modal-dialog {
+	width: auto;
+}
+
+/* 모달창 전체 박스 */
+	.modal-recomand{
+		width: 940px;
+		background-color: white;
+		margin: 7% auto;
+		box-shadow: rgba(0,0,0,0.25);
+	}
+
+/* modal - <header> */
+	.modal-head{
+		padding : 28px 30px 24px;
+		border-bottom: 1px solid #eee;
+		position: relative;
+	}
+
+/* modal - <header> - <h1> */
+	.modal-head > h1 {
+		font-size: 22px;
+	    line-height: 30px;
+	    font-weight: 700;
+	    text-align: center;
+	}
+	
+
+/* modal - <header> - <button> */
+	.modal-head-btn {
+		width: 30px;
+	    height: 30px;
+	    background-color: transparent;
+	    position: absolute;
+	    top: 28px;
+	    right: 30px;
+	    border-width: 0px;
+	}
+	
+	.modal-head-btn > svg {
+		position: absolute;
+	    top: 0px;
+	    left: 0px;
+    }
+    
+    g[Attributes Style] {
+	    fill: none;
+	    fill-rule: evenodd;
+    transfo	rm: translate(1, 1);
+	}
+
+	:not(svg) {
+	    transform-origin: 0px 0px;
+	}
+	
+	.modal-head-btn > svg .Circle {
+	    fill: rgb(255, 255, 255);
+	    stroke: rgb(151, 151, 151);
+	    opacity: 0.3;
+	}
+	
+	.modal-head-btn > svg .Close {
+   		stroke: rgb(35, 45, 74);
+	}
+
+/* modal - <gallery> - 전체를 감싸는 div */
+.mg-whole-d {
+	width: 880px;
+    height: 360px;
+    padding-top: 30px;
+    position: relative;
+    right: 0px;
+    margin: 0px auto;
+}
+
+/* modal - <gallery> - 각 갤러리 - 1depth div */
+.mg-1d {
+	position: relative;
+    float: left;
+    width: 280px;
+    height: 317px;
+    margin-bottom: 60px;
+    margin-right: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.mg-1d:last-child {
+	margin-right: 0;
+}
+
+/* modal - <gallery> - 각 갤러리 - 2depth div */
+.mg-2d {
+	height: 280px;
+    position: relative;
+}
+
+/* modal - <gallery> - heart - 1depth div */
+.mg-heart-d{
+	width: 36px;
+    position: absolute;
+    top: 3px;
+    right: 7px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* modal - <gallery> - heart - 2depth div  */
+.mg-heart-2d{
+	width: 32px;
+    height: 30px;
+    margin: 0px auto;
+    background: url(ma_img/like.svg) center center / cover;
+}
+
+/* modal - <gallery> - 각 갤러리 2div - a태그 */
+.mg-a {
+	display: block;
+}
+
+/* modal - <gallery> - 각 갤러리 2d - a태그 - 사진 div */
+.mg-a-pic1 {
+	width: 100%;
+    height: 186px;
+    margin-bottom: 12px;
+    background-color: rgb(239, 240, 242);
+    position: relative;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.mg-a-pic1::before {
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;    
+}
+
+.mg-a-pic1::before {background: url(ma_img/comp1.jpeg) center center / cover no-repeat;}
+.mg-a-pic2::before {background: url(ma_img/comp2.jpeg) center center / cover no-repeat;}
+.mg-a-pic3::before {background: url(ma_img/comp3.jpeg) center center / cover no-repeat;}
+
+.mg-a-pic::after {
+    content: "";
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+/* modal - <gallery> - div - 각 갤러리 2-lv div - a태그 - 1매물타입 */
+.mg-roomtype {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* modal - <gallery> - div - 각 갤러리 2-lv div - a태그 - 2금액  */
+.mg-price {
+    color: rgb(34, 34, 34);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    margin: 3px 0px 6px;
+}
+
+.mg-price > span {
+    vertical-align: middle;
+}
+
+/* modal - <gallery> - div - 각 갤러리 2-lv div - a태그 - 3정보 , 4타이틀  */
+.mg-p34 {
+    width: 100%;
+    color: rgb(102, 102, 102);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

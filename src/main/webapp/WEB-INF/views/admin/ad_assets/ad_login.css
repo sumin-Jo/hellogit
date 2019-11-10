@@ -1,0 +1,91 @@
+@charset "utf-8";
+ 
+/* ---------------------------------------
+ / 상단 부분
+  ---------------------------------------- */
+
+    /* head 부분 크기 설정 */
+#admin{
+    width:auto;	
+    }
+.header{
+	margin:auto;
+}
+    /* title 부분 크기 설정 */
+#admin > div >.title{
+    width: 300px;
+    height:200px;
+    margin: auto;
+    text-align: center;
+    padding-top:80px;
+    
+}
+    /* title div 내 paragraph 위치 설정 */
+#admin > div >.title >p{
+    font-weight: bold;
+    font-size:2em;
+    float: right;
+    padding-top: 40px;
+}
+
+    /* title 이미지 설정 */
+.title > img{
+    width : 100px;
+    float: left;
+}
+
+  /* ---------------------------------------
+ / 본문 부분
+  ---------------------------------------- */
+
+#content{
+	
+	margin:auto;
+}
+
+    /* loign form 크기 및 위치 설정 */
+#content > .loginf{
+    width: 400px;
+    margin:auto;
+}
+
+    /* input form 크기 및 세부 설정(id) */
+input[type=text] { 
+    width: 400px; /*input field width property */
+    height: 50px; /*input field height property */
+    padding: 12px 20px; 
+    margin: 10px 0; 
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box;
+}
+    /* input form 크기 및 세부 설정(password) */
+    input[type=password]{
+    width: 400px; /*input field width property */
+    height: 50px; /*input field height property */
+    padding: 12px 20px; 
+    margin: 10px 0; 
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box;
+}
+
+    /* input form 크기 및 세부 설정(submit) */
+    input[type=submit] { 
+    width: 400px; /*input field width property */
+    background-color:  rgb(67, 131, 255); 
+    color: white; 
+    padding: 14px 20px; 
+    margin: 8px 0; 
+    border: none; 
+    border-radius: 0px; 
+    cursor: pointer; 
+}
+
+/* input 테두리 설정
+input[type="text"],input[type=password]{
+border-color: rgb(67, 131, 255);
+ outline: 0 none;
+}*/

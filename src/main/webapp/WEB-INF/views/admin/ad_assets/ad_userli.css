@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+#content { min-width: 1200px; }
+
+#content > div {
+	width: 1200px;
+	margin: auto;
+}
+
+#content .adm-header {
+	height: 80px;
+	margin-bottom: 15px;
+}
+
+#content h1 { 
+	float: left; 
+	font-size: 30px;
+}
+
+#content .adm {	float: right; }
+
+#content .adm > div { padding-top: 10px; }
+
+#content .input-group {	width: 300px; }
