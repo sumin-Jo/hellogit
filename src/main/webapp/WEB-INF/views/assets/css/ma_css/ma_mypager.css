@@ -1,0 +1,385 @@
+@charset "UTF-8";
+			
+			.h1 {
+				height: 54px;
+				margin: 70px;
+				font-size: 32px;
+			}
+
+			#content .h {
+				height: 100px;
+			}
+
+			#content img {
+				height: 80px;
+				width: 80px;
+				border-radius: 50%;
+			}
+			
+			.div2 {
+				margin-top: 10px;
+			}
+			
+			a:hover {
+				text-decoration:none;
+			}
+
+			.blue {
+				color: #0099FF;
+			}
+						
+			/* 입력받은 값 공간 */
+			.h31 {
+			    font-size: 13px;
+			    font-weight: 600;
+			    margin: 73px 5px 10px -400px;
+			}
+			
+			.h32 {
+				font-size: 13px;
+			    font-weight: 600;
+			    margin: 36px 5px 10px -390px;
+			}
+			
+			.h33 {
+				font-size: 13px;
+			    font-weight: 600;
+			    margin: 36px 5px 10px -390px;
+			}
+			
+			.h34 {
+				font-size: 13px;
+			    font-weight: 600;
+			    margin: 36px 5px 10px -390px;
+			}
+			
+			.input {
+				width: 455px;
+				height: 45px;
+				margin: 5px 5px 5px 5px;
+			}
+			
+			.emailmypage {
+				width: 325px;
+				height: 45px;
+				margin: 5px 5px 5px 5px;
+			}
+			
+			.pon {
+				display: inline-block;
+				width: 92px;
+				margin: 5px;
+				text-align: center;
+			}
+			
+			.pon2 {
+				display: inline-block;
+				width: 92px;
+				margin: 5px 5px 30px 5px;
+			}
+			
+			.ponbutton {
+				width: 115px;
+				height: 48px;
+				margin: 5px;
+				font-size: 15px;
+    			text-align: center;
+    			border: 1px solid #1a5ae8;
+    			color: #1a5ae8;
+    			line-height: 34px;
+			}
+			
+			/** 비밀번호 */
+			.pwd {
+				margin-bottom: 2px;
+			}
+			.pwd2 {
+				margin-bottom: 30px;
+			}
+			
+			/** 취소 확인 버튼과 입력창(밑의 선을 기준으로 아래)의 간격 */
+			.hr {
+				display: block;
+				height: 30px;
+			}
+			
+			/* input박스 클릭시 파랑색 테두리 없애기 */
+			.focus:focus {
+				outline: none;
+			}
+
+			#content {
+				width: 1200px;
+				text-align: center;
+				padding: 0px;
+			}
+			
+			#submit {
+				background-color: #1a5ae8;
+				color: white;
+				height: 50px;
+				width: 210px;
+			}
+
+			#resert {
+				margin-right: 10px;
+				height: 50px;
+				width: 195px;
+			}
+			
+			#out {
+				text-decoration:underline;  
+				color: black;
+			}
+
+			#div2 {
+				height: 130px;
+				padding: 10px;
+			}
+
+			#div2 img {
+				margin: 10px;
+			}
+			
+			/** 회원가입 버튼 공간 */
+			.rhdrks {
+				display: block;
+				height: 50px;
+			}
+			
+			.rhdrks2 {
+				display: block;
+				height: 190px;
+			}
+			
+			#top form {
+				line-height: 69px;
+			}
+			
+			#reemailinumber {
+				display: none;
+			}
+			
+			#emailinumber {
+				display: none;
+				height: 50px;
+			}
+			
+			/** 인증번호 */
+			.emailinumber {
+				width: 324px;
+				height: 38px;
+				margin: 5px 5px 5px 374px;
+			}
+			
+			.reemailinumber {
+				margin: -55px 5px 5px 713px;
+				width: 115px;
+				height: 48px;
+				font-size: 15px;
+    			text-align: center;
+    			border: 1px solid #1a5ae8;
+    			color: #1a5ae8;
+			}
+			
+			/** 버튼 클릭시 */
+			.focse {
+				border: 1px solid #1a5ae8 !important;
+				background-color: white !important;
+				color: #1a5ae8 !important;
+			}
+			/**
+			.focse:focus {
+				border: 1px solid blue !important;
+				background-color: white !important;
+				color: blue !important;
+			}*/
+			
+			.modal-footerhw .btn-default:hover {
+			    color: white; 
+			    background-color: #1a5ae8; 
+			    border-color: #1a5ae8; 
+			}
+			
+			.modal-footerhw .btn:hover, .modal-footerhw .btn:focus {
+			    color: white; 
+			    background-color: #1a5ae8; 
+			    border-color: #1a5ae8; 
+			}
+			
+			.focs:before {
+				border: 1px solid #1a5ae8;
+				background-color: white;
+				color: #1a5ae8;
+			}
+			
+			.upload:focus {
+				border: 0px #1a5ae8;
+				text-decoration: none;
+				
+			}
+			
+			/** 프로필 사진 올리기 */
+			.filebox label { 
+				display: inline-block; 
+				padding: .5em .75em; 
+				color: #1a5ae8; 
+				font-size: inherit; 
+				line-height: normal; 
+				vertical-align: middle; 
+				background-color: white; 
+				cursor: pointer; 
+				border-radius: .25em; } 
+				
+			.filebox input[type="file"] { 
+				/* 파일 필드 숨기기 */ position: absolute; 
+				width: 1px; 
+				height: 1px; 
+				padding: 0; 
+				margin: -1px; 
+				overflow: hidden; 
+				clip:rect(0,0,0,0); 
+				border: 0;
+			}
+			
+			
+			
+/** 탈퇴버튼 클릭시 파란색 줄 */
+.bot:focus {
+	outline: none;
+} 
+		
+			
+/** 탈퇴 크기 */
+.modalwit {
+	height: 100%;
+	width: 100%;
+}
+
+/** 마이페이지 pre */
+.mypagepre {
+	background-color: white;
+}
+
+pre {
+	font-family: 'Nanum Gothic' !important;
+}
+
+.modal-contentwit {
+	height: 510px;
+    width: 574px;
+    margin-top: 5%;
+    margin-left: 32%;
+}
+
+/** modal-footer 넓이 */
+.modal-footerhw {
+	width: 100%;
+	height: 60px;
+	margin: 0;
+	padding: 0;
+}
+
+/** 탈퇴확인창 btnmodaloutsubmit */
+.btnmodaloutsubmit {
+	width: 100%;
+	height: 100%;
+	color: white;
+	background-color: #1a5ae8;
+	border-color: #1a5ae8;
+}
+/**
+.btnmodaloutsubmit:focus {
+	color: white !important;
+	background-color: blue !important;
+	border-color: blue !important;
+}
+**/
+	
+/** 인증버튼 */		
+.reemailaut {
+	display: none;
+}
+
+/** 탈퇴 안내사항 확인 버튼 */
+.actionbutton {
+	position: relative;
+	display: inline-block;
+	height: 20px;
+	width: 10px;
+    margin-top: 13px;
+}
+			
+/** 탈퇴 모달창 내용 */
+.modalcont {
+	height: 450px;
+}			
+
+/**	탈퇴 모달창 안의 안내사항 확인 버튼 옆 문구 */
+.modelpp {
+	display: inline-block;
+}
+			
+/** 탈퇴 (회원탈퇴를 신청하기전에 아래 안내 사항을 한번 더 확인해주세요.) */
+.modal-title {
+	color: #1a5ae8;
+}
+
+/** 탈퇴 모달 안의 안내 사항*/
+.mypageoutpre {
+	font-size: 13px;
+	background-color: white;
+    margin-bottom: 15px;
+}
+			
+			
+/* 체크박스 스타일 */
+#modaloutcheck input[type="checkbox"] {
+    width: 1px; height: 1px;
+    opacity: 0;
+}
+
+#modaloutcheck input[type="checkbox"] + .checkBox {
+    float: left;
+    width: 22px; height: 22px;
+    background-color: #ffffff;
+    position: absolute;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+/* 체크박스 스타일 - checked */
+#modaloutcheck input[type="checkbox"]:checked + .checkBox {
+    background-color: #006cff;
+    border: 1px solid #006cff;
+}
+
+#modaloutcheck input[type="checkbox"]:checked + .checkBox::after {
+    content: "";
+    display: block;
+    width: 47%;
+    height: 27%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transform-origin: 30% 35%;
+    border-left: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+			
+/** 회원탈퇴 모달창 outtextarea */
+.outtextarea {
+	margin-bottom: 10px;
+}
+	
+/**안내사항을 모두 확인하였으며, 이에 동의합니다. */			
+.checkTextspan {
+	margin-left: 30px;
+}			
+			
+			
+			
+			
+			
+			

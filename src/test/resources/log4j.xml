@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
     <!-- 이클립스 콘솔에 출력되는 설정 -->
@@ -14,7 +14,7 @@
     <!-- 파일로 기록되는 로그 설정 -->
     <appender name="rollingFile" class="org.apache.log4j.RollingFileAppender">
         <!-- 로그 파일 생성위치 -->
-        <param name="file" value="C:/LMS/workspace3/web.log" />
+        <param name="file" value="log_b2/web.log" />
         <param name="Append" value="true" />
         <!-- 로그 파일 하나당 사이즈 100m -->
         <param name="MaxFileSize" value="100mb" />
@@ -31,7 +31,7 @@
         <!-- 에러와 관련된 로그만 기록하도록 지정 -->
         <param name="Threshold" value="ERROR" />
         <!-- 로그 파일 생성위치 -->
-        <param name="File" value="C:/LMS/workspace3/error.log" />
+        <param name="File" value="log_b2/error.log" />
         <!-- 하루에 한 개씩 날짜를 적용하며 파일이름이 생성되도록 함 -->
         <param name="Append" value="true" />
         <param name="DatePattern" value="'.'yyMMdd" />
@@ -43,10 +43,10 @@
 
     <!-- Application Loggers -->
     <!-- study.jsp.model1 패키지 하위의 모든 클래스에서 발생하는 로그를 기록함 프로젝트 상황에 맞게 수정필요. -->
-    <logger name="study.jsp.model1">
+    <logger name="study.jsp.model2">
         <level value="debug" />
     </logger>
-
+    
     <!-- DATABASE 연동 관련 로그 설정 시작 -->
     <logger name="org.apache.ibatis">
         <level value="DEBUG" />

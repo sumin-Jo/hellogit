@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="RoomMapper">
+
+    <!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+    <resultMap id="roomMap"
+        type="project.star.b2.model.Room">
+        <!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다. -->
+        <result property="no" column="no" />
+        <result property="roomtype" column="roomtype" />
+        <result property="title" column="title" />
+        <result property="floor" column="floor" />
+        <result property="area" column="area" />
+        <result property="fee" column="fee" />
+        <result property="confirmdate" column="confirmdate" />
+        <result property="address" column="address" />
+        <result property="dong" column="dong" />
+        <result property="ho" column="ho" />
+        <result property="latitude" column="latitude" />
+        <result property="longitude" column="longitude" />
+        <result property="region_2depth_name" column="region_2depth_name" />
+        <result property="region_3depth_name" column="region_3depth_name" />
+        <result property="user_no" column="user_no" />
+    </resultMap>
+
+    <!-- 단일행 조회를 위한 기능 정의 -->
+    <select id="selectItem"
+        parameterType="project.star.b2.model.Room"
+        resultMap="roomMap">
+        SELECT 
+        no, roomtype, title, floor, area, fee, confirmdate, address, dong, ho, latitude, longitude,
+        region_2depth_name, region_3depth_name, user_no
+        FROM room 
+        WHERE no=#{no};
+    </select>
+
+    <!-- 다중행 조회를 위한 기능 정의 -->
+    <select id="selectList"
+        parameterType="project.star.b2.model.Room"
+        resultMap="roomMap">
+        SELECT 
+        no, roomtype, title, floor, area, fee, confirmdate, address, dong, ho, 
+        latitude, longitude, region_2depth_name, region_3depth_name, user_no
+        FROM room
+        
+        <where>
+            <if test="roomtype != null and roomtype != ''">
+                roomtype LIKE concat('%', #{roomtype}, '%')
+            </if>
+            
+            <if test="floor != null and floor != ''">
+                OR floor LIKE concat('%', #{floor}, '%')
+            </if>
+        </where>
+        
+        ORDER BY no ASC
+        
+        <if test="listCount > 0">
+            LIMIT #{offset}, #{listCount}
+        </if>
+    </select>
+
+    <!-- 데이터 저장을 위한 기능 정의 -->
+    <insert id="insertItem"
+        parameterType="project.star.b2.model.Room"
+        useGeneratedKeys="true"
+        keyProperty="no">
+        INSERT INTO room (roomtype, title, floor, area, fee, confirmdate, address, dong, ho, latitude, longitude,
+        region_2depth_name, region_3depth_name, user_no) 
+        VALUES (#{roomtype}, #{title}, #{floor}, #{area}, #{fee}, #{confirmdate}, #{address}, #{dong}, #{ho}, #{latitude}, #{longitude},
+        #{region_2depth_name}, #{region_3depth_name}, #{user_no});
+    </insert>
+
+    <!-- 데이터 삭제를 위한 기능 정의 -->
+    <delete id="deleteItem"
+        parameterType="project.star.b2.model.Room">
+        DELETE FROM room WHERE no=#{no};
+    </delete>
+
+    <!-- 데이터 갱신을 위한 기능 정의 -->
+    <update id="updateItem"
+        parameterType="project.star.b2.model.Room">
+        UPDATE room SET roomtype=#{roomtype}, title=#{title}, floor=#{floor}, area=#{area}, fee=#{fee}, confirmdate=#{confirmdate}, address=#{address}, dong=#{dong}, ho=#{ho}, latitude=#{latitude}, longitude=#{longitude},
+        region_2depth_name=#{region_2depth_name},region_3depth_name=#{region_3depth_name}, user_no=#{user_no}
+        WHERE no=#{no};
+    </update>
+    
+    <!--
+        조건에 맞는 데이터 수를 집계하여 int 타입으로 반환한다.
+        count, max, min, sum, avg 함수를 사용한 경우 Mapper에서는
+        resultMap이 아닌 resultType으로 반환한다.
+    -->
+    <select id="selectCountAll" 
+            parameterType="project.star.b2.model.Room"
+            resultType="int">
+        SELECT COUNT(*) FROM room
+        
+        <where>
+            <if test="roomtype != null and roomtype != ''">
+                roomtype LIKE concat('%', #{roomtype}, '%')
+            </if>
+            
+            <if test="floor != null and floor != ''">
+                OR floor LIKE concat('%', #{floor}, '%')
+            </if>
+        </where>
+    </select>
+
+</mapper>
