@@ -30,8 +30,8 @@
 				<th width="100" align="center">이메일주소</th>
 				<th width="100" align="center">비밀번호</th>
 				<th width="100" align="center">전화번호</th>
-				<th width="100" align="center">등록일자</th>
-				<th width="100" align="center">수정일자</th>
+				<th width="100" align="center">등록날짜</th>
+				<th width="100" align="center">수정날짜</th>
 				<th width="100" align="center">프로필경로</th>
 			</tr>
 		</thead>

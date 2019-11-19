@@ -161,6 +161,7 @@ public class UserController {
 		String passwd = webHelper.getString("passwd");
 		String tel = webHelper.getString("tel");
 		String regdate = webHelper.getString("regdate");
+		String editdate = webHelper.getString("editdate");
 		String profile_img = webHelper.getString("profile_img");
 		
 		// 학과 이름은 필수 항목이므로 입력여부를 검사
@@ -182,6 +183,7 @@ public class UserController {
 		input.setPasswd(passwd);
 		input.setTel(tel);
 		input.setRegdate(regdate);
+		input.setEditdate(editdate);
 		input.setProfile_img(profile_img);
 		
 		
