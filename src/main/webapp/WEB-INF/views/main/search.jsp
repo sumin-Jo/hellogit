@@ -1,6 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -23,8 +25,7 @@
 			<div id="search" class="clearfix">
 				<div class="searchtab">
 					<form id="search-form">
-						<input type="text" placeholder="검색바" name="search" /><i
-							class="glyphicon glyphicon-search"></i>
+						<input type="text" placeholder="검색바" name="search" /> <i class="glyphicon glyphicon-search"></i>
 						<button type="submit"></button>
 					</form>
 				</div>
@@ -32,8 +33,7 @@
 				<div class="filters clearfix">
 					<!-- 개별 필터 -->
 					<div class="btn-group filter">
-						<button type="button" class="btn dropdown-toggle btn-rt"
-							data-toggle="dropdown">
+						<button type="button" class="btn dropdown-toggle btn-rt" data-toggle="dropdown">
 							원룸,투·쓰리룸,오피스텔 <span class="caret"></span>
 						</button>
 						<div class="dropdown-menu width1" role="menu">
@@ -41,17 +41,20 @@
 								<h1>방종류</h1>
 								<p>중복 선택이 가능합니다.</p>
 								<ul>
-									<li><label> <input type="checkbox"
-											name="room-type" value="oneroom" checked /> <span
-											class="checkBox"></span> <span class="checkText">원룸</span>
+									<li><label>
+										<input type="checkbox" name="room-type" value="oneroom" checked />
+										<span class="checkBox"></span>
+										<span class="checkText">원룸</span>
 									</label></li>
-									<li><label> <input type="checkbox"
-											name="room-type" value="tworoom" checked /> <span
-											class="checkBox"></span> <span class="checkText">투·쓰리룸</span>
+									<li><label>
+										<input type="checkbox" name="room-type" value="tworoom" checked />
+										<span class="checkBox"></span>
+										<span class="checkText">투·쓰리룸</span>
 									</label></li>
-									<li><label> <input type="checkbox"
-											name="room-type" value="officetel" checked /> <span
-											class="checkBox"></span> <span class="checkText">오피스텔</span>
+									<li><label>
+										<input type="checkbox" name="room-type" value="officetel" checked />
+										<span class="checkBox"></span>
+										<span class="checkText">오피스텔</span>
 									</label></li>
 								</ul>
 							</form>
@@ -60,25 +63,27 @@
 					<!-- 개별 필터 끝 -->
 					<!-- 개별 필터 -->
 					<div class="btn-group filter">
-						<button type="button" class="btn dropdown-toggle btn-st"
-							data-toggle="dropdown">
+						<button type="button" class="btn dropdown-toggle btn-st" data-toggle="dropdown">
 							월세,전세,매매 <span class="caret"></span>
 						</button>
 						<div class="dropdown-menu width1" role="menu">
 							<h1>매물종류</h1>
 							<p>중복 선택이 가능합니다.</p>
 							<ul>
-								<li><label> <input type="checkbox" name="sale-type"
-										value="monthly" checked /> <span class="checkBox"></span> <span
-										class="checkText">월세</span>
+								<li><label>
+									<input type="checkbox" name="sale-type" value="monthly" checked />
+									<span class="checkBox"></span>
+									<span class="checkText">월세</span>
 								</label></li>
-								<li><label> <input type="checkbox" name="sale-type"
-										value="charter" checked /> <span class="checkBox"></span> <span
-										class="checkText">전세</span>
+								<li><label>
+									<input type="checkbox" name="sale-type" value="charter" checked />
+									<span class="checkBox"></span>
+									<span class="checkText">전세</span>
 								</label></li>
-								<li><label> <input type="checkbox" name="sale-type"
-										value="buying" checked /> <span class="checkBox"></span> <span
-										class="checkText">매매</span>
+								<li><label>
+									<input type="checkbox" name="sale-type" value="buying" checked />
+									<span class="checkBox"></span>
+									<span class="checkText">매매</span>
 								</label></li>
 							</ul>
 						</div>
@@ -86,8 +91,7 @@
 					<!-- 개별 필터 끝 -->
 					<!-- 개별 필터 -->
 					<div class="btn-group filter">
-						<button type="button" class="btn dropdown-toggle"
-							data-toggle="dropdown">
+						<button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
 							가격대 <span class="caret"></span>
 						</button>
 						<div class="dropdown-menu width2" role="menu">
@@ -135,8 +139,7 @@
 					<!-- 개별 필터 끝 -->
 					<!-- 개별 필터 -->
 					<div class="btn-group filter">
-						<button type="button" class="btn dropdown-toggle"
-							data-toggle="dropdown">
+						<button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
 							관리비 <span class="caret"></span>
 						</button>
 						<div class="dropdown-menu width2" role="menu">
@@ -160,8 +163,7 @@
 					<!-- 개별 필터 끝 -->
 					<!-- 개별 필터 -->
 					<div class="btn-group filter">
-						<button type="button" class="btn dropdown-toggle"
-							data-toggle="dropdown">
+						<button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
 							방크기 <span class="caret"></span>
 						</button>
 						<div class="dropdown-menu pull-right width2" role="menu">
@@ -202,6 +204,47 @@
 						<!-- 갤러리 내용 영역 -->
 						<div class="gallery-content clearfix">
 							<ul id="gallery-list">
+								<c:choose>
+								<%-- 조회 결과가 없는 경우 --%>
+								<c:when test="${output == null || fn:length(output) == 0}">
+									<p>조회 결과가 없습니다.</p>
+								</c:when>
+								<%-- 갤러리 시작 --%>
+								<c:otherwise>
+								<c:forEach var="item" items="${output}" varStatus="status">
+								<li>
+									<div class="recent-div5">
+										<div class="recent-div6">
+											<%-- 좋아요 버튼 --%>
+											<div class="recent-div7">
+												<div class="recent-div8 off" data-value="on"></div>
+											</div>
+											<%-- 좋아요 끝 --%>
+											<%-- 전체 링크화 --%>
+											<a target="_blank" rel="" class="recent-a" href="${pageContext.request.contextPath}/main/rmdt.do">
+												<!-- 이미지 -->
+												<div class="recent-a-div"></div>
+												<!-- 확인매물 div -->
+												<div class="recent-a-confirm">
+													<div class="recent-a-confirm-div" type="">
+														<span class="bold">확인매물</span> <span>${item.confirmdate}</span>
+													</div>
+												</div>
+												<%-- 확인매물 끝 --%>
+												<p class="recent-a-p1">${item.roomtype}</p>
+												<p class="recent-a-p2">
+													<span>전세 1억4000</span>
+												</p>
+												<p class="recent-a-p34">${item.floor}층, ${item.area}m², 관리비 ${item.fee}만</p>
+												<p class="recent-a-p34">${item.title}</p>
+											</a>
+										</div>
+									</div>
+								</li>
+								</c:forEach>
+								</c:otherwise>
+								<%-- 각 갤러리 끝 --%>
+								</c:choose>
 							</ul>
 						</div>
 						<!-- 갤러리 내용 영역 -->
@@ -246,8 +289,7 @@
 	<!-- Javascript -->
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-1.10.2.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"></script>
-	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=49ad4eb7ef14b56eb0eca723e4dd1eaa&libraries=clusterer,services"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=49ad4eb7ef14b56eb0eca723e4dd1eaa&libraries=clusterer,services"></script>
 	<script src="${pageContext.request.contextPath}/assets/plugin/ion.rangeSlider.js"></script>
 	<script type="text/javascript">
 		/* 브라우저 크기에 따라 갤러리와 지도영역 높이 변경 */
@@ -263,9 +305,17 @@
 			$(window).resize(function(e) {
 				contentSize();
 			});
+			
+			/* 조건에 맞는 방 개수 */
+			var n = $(".recent-div5").length;
+			$(".room-count").html(n);
+
+			$(".recent-div8").click(function(e) {
+				$(this).toggleClass('on off');
+			});
 		});
 	</script>
-<!-- Ajax로 읽어온 내용을 출력하는데 사용될 템플릿 -->
+	<%-- <!-- Ajax로 읽어온 내용을 출력하는데 사용될 템플릿 -->
 	<script src="${pageContext.request.contextPath}/assets/plugin/handlebars-v4.0.11.js"></script>
 	<script id="gallery-data" type="text/x-handlebars-template">
 		{{#each gallery}}
@@ -321,7 +371,7 @@
 		$(function() {
 			get_gallery();
 		});
-	</script>
+	</script> --%>
 
 	<!-- 지도 api -->
 	<script type="text/javascript">
@@ -359,79 +409,116 @@
 			});
 
 			// 데이터 가져오기
-			$.get("${pageContext.request.contextPath}/assets/css/ma_css/address.json", function(data) {
-				var markers = $(data.positions).map(
-					function(i, position) {
-						return new kakao.maps.Marker({
-							position : new kakao.maps.LatLng(position.lat, position.lng)
-						});
-					});
-				clusterer.setMinClusterSize(1);
+			$
+					.get(
+							"${pageContext.request.contextPath}/assets/css/ma_css/address.json",
+							function(data) {
+								var markers = $(data.positions)
+										.map(
+												function(i, position) {
+													return new kakao.maps.Marker(
+															{
+																position : new kakao.maps.LatLng(
+																		position.lat,
+																		position.lng)
+															});
+												});
+								clusterer.setMinClusterSize(1);
 
-				// 클러스터러에 마커 추가
-				//clusterer.addMarkers(markers);
-				
-				// 지도 레벨에 따라 마커 생성/제거 
-				var changeMarker = function(){
-				    var level = map.getLevel();
+								// 클러스터러에 마커 추가
+								//clusterer.addMarkers(markers);
 
-				    if (1 <= level && level <= 7) {
-				    	clusterer.addMarkers(markers);
-				    } else if (8 <= level && level <= 10) {
-				    	clusterer.removeMarkers(markers);
-				    }
-				};
+								// 지도 레벨에 따라 마커 생성/제거 
+								var changeMarker = function() {
+									var level = map.getLevel();
 
-				kakao.maps.event.addListener(map, 'zoom_changed', changeMarker);
-				changeMarker();
-				
-				kakao.maps.event.addListener( clusterer, 'clusterclick', function( cluster ) {
-				    console.log( cluster.getMarkers() );
-				});
-				
-				kakao.maps.event.addListener( clusterer, 'clusterover', function( cluster ) {
-				    console.log( cluster.getBounds() );
-				});
-			
-			}); // end $.get(address.json)
+									if (1 <= level && level <= 7) {
+										clusterer.addMarkers(markers);
+									} else if (8 <= level && level <= 10) {
+										clusterer.removeMarkers(markers);
+									}
+								};
+
+								kakao.maps.event.addListener(map,
+										'zoom_changed', changeMarker);
+								changeMarker();
+
+								kakao.maps.event.addListener(clusterer,
+										'clusterclick', function(cluster) {
+											console.log(cluster.getMarkers());
+										});
+
+								kakao.maps.event.addListener(clusterer,
+										'clusterover', function(cluster) {
+											console.log(cluster.getBounds());
+										});
+
+							}); // end $.get(address.json)
 
 			// 서울시 구 별로 마커 생성하기
-			$.getJSON("${pageContext.request.contextPath}/assets/css/ma_css/guPosition.json", function(data) {
-				var guPositions = data;
-				var gumark;
-				for (var i = 0; i < guPositions.length; i++) {
-					gumark = '<div class="gu-marker" id="gu-marker' + i + '">';
-					gumark += '<div class="gu-count">' + 500 + '</div>';
-					gumark += '<div class="gu-name">' + guPositions[i].guName + '</div>';
-					gumark += '<span id="lat" style="display:none;">' + guPositions[i].lat + '</span>';	// 해당 구의 위도 저장
-					gumark += '<span id="lng" style="display:none;">' + guPositions[i].lng + '</span>';	// 해당 구의 경도 저장
-					gumark += '</div>';
-					var customOverlay = new kakao.maps.CustomOverlay({
-						position : new kakao.maps.LatLng(guPositions[i].lat,
-								guPositions[i].lng),
-						clickable : false,
-						content : gumark,
-						zIndex : 3
-					});
-					customOverlay.setMap(map);
-					
-					// 마커 클릭 시 마커를 중심으로 지도 확대 이벤트
-					$("#gu-marker" + i).click(function() {
-						var poslat = $(this).children("#lat").html();
-						var poslng = $(this).children("#lng").html();
-						map.setCenter(new kakao.maps.LatLng(poslat, poslng));
-						map.setLevel(map.getLevel() - 2, {animate: true});
-					});
-					
-				} // end for
-				
-				$("#map > div > div > div > div").hover(function() {
-					$(this).css("z-index", "100");}, 
-				function() {
-					$(this).css("z-index", "0");
-				}); // end hover()
-			
-			});
+			$
+					.getJSON(
+							"${pageContext.request.contextPath}/assets/css/ma_css/guPosition.json",
+							function(data) {
+								var guPositions = data;
+								var gumark;
+								for (var i = 0; i < guPositions.length; i++) {
+									gumark = '<div class="gu-marker" id="gu-marker' + i + '">';
+									gumark += '<div class="gu-count">' + 500
+											+ '</div>';
+									gumark += '<div class="gu-name">'
+											+ guPositions[i].guName + '</div>';
+									gumark += '<span id="lat" style="display:none;">'
+											+ guPositions[i].lat + '</span>'; // 해당 구의 위도 저장
+									gumark += '<span id="lng" style="display:none;">'
+											+ guPositions[i].lng + '</span>'; // 해당 구의 경도 저장
+									gumark += '</div>';
+									var customOverlay = new kakao.maps.CustomOverlay(
+											{
+												position : new kakao.maps.LatLng(
+														guPositions[i].lat,
+														guPositions[i].lng),
+												clickable : false,
+												content : gumark,
+												zIndex : 3
+											});
+									customOverlay.setMap(map);
+
+									// 마커 클릭 시 마커를 중심으로 지도 확대 이벤트
+									$("#gu-marker" + i)
+											.click(
+													function() {
+														var poslat = $(this)
+																.children(
+																		"#lat")
+																.html();
+														var poslng = $(this)
+																.children(
+																		"#lng")
+																.html();
+														map
+																.setCenter(new kakao.maps.LatLng(
+																		poslat,
+																		poslng));
+														map
+																.setLevel(
+																		map
+																				.getLevel() - 2,
+																		{
+																			animate : true
+																		});
+													});
+
+								} // end for
+
+								$("#map > div > div > div > div").hover(
+										function() {
+											$(this).css("z-index", "100");
+										}, function() {
+											$(this).css("z-index", "0");
+										}); // end hover()
+
+							});
 
 			// 검색값 가져와서 지도 위치 변경하기
 			$("#search-form").submit(
@@ -491,16 +578,16 @@
 		$('.dropdown-menu').click(function(e) {
 			e.stopPropagation();
 		})
-		
+
 		// 금액별로 단위 표시(만/억)를 위한 메서드
 		function fix(val) {
 			if (val < 10000) {
 				var won = val + "만 원";
-			} else if (val%10000 == 0){
-				var won = val/10000 + "억 원";
+			} else if (val % 10000 == 0) {
+				var won = val / 10000 + "억 원";
 			} else {
-				var mil = Math.floor(val/10000);
-				var won = mil + "억 " + (val - mil*10000) + "만 원"; 
+				var mil = Math.floor(val / 10000);
+				var won = mil + "억 " + (val - mil * 10000) + "만 원";
 			}
 			return won;
 		} // end fix()
@@ -515,26 +602,31 @@
 				80000, 85000, 90000, "무제한" ];
 		var price1_from = price1_value.indexOf(0);
 		var price1_to = price1_value.indexOf("무제한");
-		$("#slide-price1").ionRangeSlider({
-			type : "double",
-			from : price1_from,
-			to : price1_to,
-			values : price1_value,
-			to_min : price1_value.indexOf(100),
-			from_max : price1_value.indexOf(90000),
-			skin : "round",
-			onChange: function (data) {
-				if(data.from_value == 0 && data.to_value == "무제한") {
-					$("#filter1-value").html("무제한");
-				} else if (data.to_value == "무제한") {
-					$("#filter1-value").html(fix(data.from_value) + " ~ " + data.to_value);
-				} else {
-					$("#filter1-value").html(fix(data.from_value) + " ~ " + fix(data.to_value));
-				}
-	        },
-	        hide_from_to : true,
-			hide_min_max : true
-		});
+		$("#slide-price1").ionRangeSlider(
+				{
+					type : "double",
+					from : price1_from,
+					to : price1_to,
+					values : price1_value,
+					to_min : price1_value.indexOf(100),
+					from_max : price1_value.indexOf(90000),
+					skin : "round",
+					onChange : function(data) {
+						if (data.from_value == 0 && data.to_value == "무제한") {
+							$("#filter1-value").html("무제한");
+						} else if (data.to_value == "무제한") {
+							$("#filter1-value").html(
+									fix(data.from_value) + " ~ "
+											+ data.to_value);
+						} else {
+							$("#filter1-value").html(
+									fix(data.from_value) + " ~ "
+											+ fix(data.to_value));
+						}
+					},
+					hide_from_to : true,
+					hide_min_max : true
+				});
 		var slide1_value = $("#slide-price1").data("ionRangeSlider");
 
 		// 월세
@@ -542,28 +634,32 @@
 				65, 70, 80, 90, 100, 110, 120, 130, 140, 150, "무제한" ];
 		var price2_from = price2_value.indexOf(0);
 		var price2_to = price2_value.indexOf("무제한");
-		$("#slide-price2").ionRangeSlider({
-			type : "double",
-			// min: 0,
-			// max: 150,
-			from : price2_from,
-			to : price2_to,
-			values : price2_value,
-			to_min : price2_value.indexOf(5),
-			from_max : price2_value.indexOf(150),
-			skin : "round",
-			onChange: function (data) {
-				if(data.from_value == 0 && data.to_value == "무제한") {
-					$("#filter2-value").html("무제한");
-				} else if (data.to_value == "무제한") {
-					$("#filter2-value").html(data.from_value + "만 원 ~" + data.to_value);
-				} else {
-					$("#filter2-value").html(data.from_value + "만 원 ~" + data.to_value + "만 원");
-				}
-	        },
-		    hide_from_to : true,
-			hide_min_max : true
-		});
+		$("#slide-price2").ionRangeSlider(
+				{
+					type : "double",
+					// min: 0,
+					// max: 150,
+					from : price2_from,
+					to : price2_to,
+					values : price2_value,
+					to_min : price2_value.indexOf(5),
+					from_max : price2_value.indexOf(150),
+					skin : "round",
+					onChange : function(data) {
+						if (data.from_value == 0 && data.to_value == "무제한") {
+							$("#filter2-value").html("무제한");
+						} else if (data.to_value == "무제한") {
+							$("#filter2-value").html(
+									data.from_value + "만 원 ~" + data.to_value);
+						} else {
+							$("#filter2-value").html(
+									data.from_value + "만 원 ~" + data.to_value
+											+ "만 원");
+						}
+					},
+					hide_from_to : true,
+					hide_min_max : true
+				});
 		var slide2_value = $("#slide-price2").data("ionRangeSlider");
 
 		// 매매가
@@ -572,26 +668,31 @@
 				110000, 120000, 130000, 140000, 150000, "무제한" ];
 		var price3_from = price3_value.indexOf(0);
 		var price3_to = price3_value.indexOf("무제한");
-		$("#slide-price3").ionRangeSlider({
-			type : "double",
-			from : price3_from,
-			to : price3_to,
-			values : price3_value,
-			to_min : price3_value.indexOf(3000),
-			from_max : price3_value.indexOf(150000),
-			skin : "round",
-			onChange: function (data) {
-				if(data.from_value == 0 && data.to_value == "무제한") {
-					$("#filter3-value").html("무제한");
-				} else if (data.to_value == "무제한") {
-					$("#filter3-value").html(fix(data.from_value) + " ~ " + data.to_value);
-				} else {
-					$("#filter3-value").html(fix(data.from_value) + " ~ " + fix(data.to_value));
-				}
-	        },
-		    hide_from_to : true,
-			hide_min_max : true
-		});
+		$("#slide-price3").ionRangeSlider(
+				{
+					type : "double",
+					from : price3_from,
+					to : price3_to,
+					values : price3_value,
+					to_min : price3_value.indexOf(3000),
+					from_max : price3_value.indexOf(150000),
+					skin : "round",
+					onChange : function(data) {
+						if (data.from_value == 0 && data.to_value == "무제한") {
+							$("#filter3-value").html("무제한");
+						} else if (data.to_value == "무제한") {
+							$("#filter3-value").html(
+									fix(data.from_value) + " ~ "
+											+ data.to_value);
+						} else {
+							$("#filter3-value").html(
+									fix(data.from_value) + " ~ "
+											+ fix(data.to_value));
+						}
+					},
+					hide_from_to : true,
+					hide_min_max : true
+				});
 		var slide3_value = $("#slide-price3").data("ionRangeSlider");
 
 		// 관리비
@@ -600,50 +701,60 @@
 				31, 32, 33, 34, 35, 36, 38, 40, 42, 44, 46, 48, 50, "무제한" ];
 		var price4_from = price4_value.indexOf(0);
 		var price4_to = price4_value.indexOf("무제한");
-		$("#slide-price4").ionRangeSlider({
-			type : "double",
-			from : price4_from,
-			to : price4_to,
-			values : price4_value,
-			to_min : price4_value.indexOf(1),
-			from_max : price4_value.indexOf(50),
-			skin : "round",
-			onChange: function (data) {
-				if(data.from_value == 0 && data.to_value == "무제한") {
-					$("#filter4-value").html("무제한");
-				} else if (data.to_value == "무제한") {
-					$("#filter4-value").html(data.from_value + "만 원 ~" + data.to_value);
-				} else {
-					$("#filter4-value").html(data.from_value + "만 원 ~" + data.to_value + "만 원");
-				}
-	        },
-		    hide_from_to : true,
-			hide_min_max : true
-		});
+		$("#slide-price4").ionRangeSlider(
+				{
+					type : "double",
+					from : price4_from,
+					to : price4_to,
+					values : price4_value,
+					to_min : price4_value.indexOf(1),
+					from_max : price4_value.indexOf(50),
+					skin : "round",
+					onChange : function(data) {
+						if (data.from_value == 0 && data.to_value == "무제한") {
+							$("#filter4-value").html("무제한");
+						} else if (data.to_value == "무제한") {
+							$("#filter4-value").html(
+									data.from_value + "만 원 ~" + data.to_value);
+						} else {
+							$("#filter4-value").html(
+									data.from_value + "만 원 ~" + data.to_value
+											+ "만 원");
+						}
+					},
+					hide_from_to : true,
+					hide_min_max : true
+				});
 		var slide4_value = $("#slide-price4").data("ionRangeSlider");
 
 		// 방크기
-		$("#slide-size").ionRangeSlider({
-			type : "double",
-			min : 0,
-			max : 115,
-			step : 1,
-			from : 0,
-			skin : "round",
-			onChange: function (data) {
-				var from_p = data.from/3.3;
-				var to_p = data.to/3.3;
-				if(data.from == 0 && data.to == 115) {
-					$("#filter5-value").html("무제한");
-				} else if (data.to == 115) {
-					$("#filter5-value").html(data.from + "㎡(" + Math.floor(from_p) + "평) ~ 무제한");
-				} else {
-					$("#filter5-value").html(data.from + "㎡(" + Math.floor(from_p) + "평) ~ " + data.to + "㎡(" + Math.floor(to_p) + "평)");
-				}
-	        },
-		    hide_from_to : true,
-			hide_min_max : true
-		});
+		$("#slide-size").ionRangeSlider(
+				{
+					type : "double",
+					min : 0,
+					max : 115,
+					step : 1,
+					from : 0,
+					skin : "round",
+					onChange : function(data) {
+						var from_p = data.from / 3.3;
+						var to_p = data.to / 3.3;
+						if (data.from == 0 && data.to == 115) {
+							$("#filter5-value").html("무제한");
+						} else if (data.to == 115) {
+							$("#filter5-value").html(
+									data.from + "㎡(" + Math.floor(from_p)
+											+ "평) ~ 무제한");
+						} else {
+							$("#filter5-value").html(
+									data.from + "㎡(" + Math.floor(from_p)
+											+ "평) ~ " + data.to + "㎡("
+											+ Math.floor(to_p) + "평)");
+						}
+					},
+					hide_from_to : true,
+					hide_min_max : true
+				});
 		var slide5_value = $("#slide-size").data("ionRangeSlider");
 
 		// 체크박스 클릭 시 드롭다운 버튼 내용 변경 ***추후 구현

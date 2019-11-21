@@ -73,7 +73,7 @@ body > div { height: 100%; overflow-y: hidden; }
 /* 필터 메뉴 크기, 여백 조절 */
 #search .filter > div { padding: 25px 30px; }
 #search .filter .width1 { width: 250px; }
-#search .filter .width2 { width: 400px; }
+#search .filter .width2 { width: 415px; }
 
 /* 필터 메뉴 > 필터 이름 */
 #search .filter div h1 {
@@ -170,11 +170,11 @@ body > div { height: 100%; overflow-y: hidden; }
 
 /* '무제한' 위치, 색 조정 */
 #search .filter .filter-slide p {
-     float: right;
-     color: rgb(0, 108, 255);
-     font-size: 15px;
-     font-weight: 300;
-     line-height: 30px;
+	float: right;
+	color: rgb(0, 108, 255);
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 30px;
 }
 
 #search .filter .filter-slide ul:after {
@@ -532,10 +532,7 @@ body > div { height: 100%; overflow-y: hidden; }
      text-align: center;
      vertical-align: middle;
      cursor: pointer;
-     border-width: 1px;
-     border-style: solid;
-     border-color: transparent;
-     border-image: initial;
+     border: 1px solid rgba(255, 255, 255, 0);
      border-radius: 50%;
 }
 #contentbox .gallery-index .index-list li .index-indiv {
