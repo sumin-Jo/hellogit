@@ -33,7 +33,7 @@ public class RoomInfoServiceImpl implements RoomInfoService {
         try {
             result1 = sqlSession.insert("RoomMapper.insertItem", input);
             
-            input.setRoom_no(input.getNo());
+            input.setRoomno(input.getRoomno());
             
             result2 = sqlSession.insert("InfoMapper.insertItem", input);
             

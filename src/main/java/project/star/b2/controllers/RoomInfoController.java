@@ -78,24 +78,24 @@ public class RoomInfoController {
 		String address = webHelper.getString("address");
 		String dong = webHelper.getString("dong");
 		String ho = webHelper.getString("ho");
-		int latitude = webHelper.getInt("latitude");
-		int longitude = webHelper.getInt("longitude");
+		double latitude = webHelper.getDouble("latitude");
+		double longitude = webHelper.getDouble("longitude");
 		String region_2depth_name = webHelper.getString("region_2depth_name");
 		String region_3depth_name = webHelper.getString("region_3depth_name");
-		int user_no = webHelper.getInt("user_no");
+		int userno = webHelper.getInt("userno");
 		
 		/** info 정보 받아오기 */
 		int feeitem = webHelper.getInt("feeitem");
-		String parking = webHelper.getString("parking");
-		String pet = webHelper.getString("pet");
-		String elevator = webHelper.getString("elevator");
-		String veranda = webHelper.getString("veranda");
-		String builtin = webHelper.getString("builtin");
+		int parking = webHelper.getInt("parking");
+		int pet = webHelper.getInt("pet");
+		int elevator = webHelper.getInt("elevator");
+		int veranda = webHelper.getInt("veranda");
+		int builtin = webHelper.getInt("builtin");
 		int optionitem = webHelper.getInt("optionitem");
-		String loan = webHelper.getString("loan");
+		int loan = webHelper.getInt("loan");
 		int supplyarea = webHelper.getInt("supplyarea");
 		int maxfloor = webHelper.getInt("maxfloor");
-		String heater = webHelper.getString("heater");
+		int heater = webHelper.getInt("heater");
 		String commingday = webHelper.getString("commingday");
 		String buildtype = webHelper.getString("buildtype");
 		String content = webHelper.getString("content");	
@@ -111,7 +111,7 @@ public class RoomInfoController {
 		/** 2) 데이터 저장하기 */
 		
 		RoomInfo input = new RoomInfo();
-		int room_no = input.getNo();
+		int roomno = input.getRoomno();
 		// room 정보 받아오기 
 		input.setRoomtype(roomtype);
 		input.setTitle(title);
@@ -126,7 +126,7 @@ public class RoomInfoController {
 		input.setLongitude(longitude);
 		input.setRegion_2depth_name(region_2depth_name);
 		input.setRegion_3depth_name(region_3depth_name);
-		input.setUser_no(user_no);
+		input.setUserno(userno);
 		
 		// info 정보 받아오기 
 		input.setFeeitem(feeitem);
@@ -143,17 +143,17 @@ public class RoomInfoController {
 		input.setCommingday(commingday);
 		input.setBuildtype(buildtype);
 		input.setContent(content);
-		input.setRoom_no(room_no);
+		input.setRoomno(roomno);
 		
-		System.out.println(input.getNo());
-		System.out.println(input.getNo());
-		System.out.println(input.getNo());
-		System.out.println(input.getNo());
-		System.out.println(input.getNo());
-		System.out.println(input.getNo());
-		System.out.println(input.getNo());
-		System.out.println(input.getNo());
-		System.out.println(input.getNo());
+		System.out.println(input.getRoomno());
+		System.out.println(input.getRoomno());
+		System.out.println(input.getRoomno());
+		System.out.println(input.getRoomno());
+		System.out.println(input.getRoomno());
+		System.out.println(input.getRoomno());
+		System.out.println(input.getRoomno());
+		System.out.println(input.getRoomno());
+		System.out.println(input.getRoomno());
 		
 		
 		try {
@@ -168,7 +168,7 @@ public class RoomInfoController {
 		
 		/** 3) 결과를 확인하기 위한 페이지 이동 */
 		// 저장 결과를 확인하기 위해서 데이터 저장시 생성된 PK값을 상세 페이지로 전달해야 한다.
-		String redirectUrl = contextPath + "/roominfo/view.do?no="+ input.getNo();
+		String redirectUrl = contextPath + "/roominfo/view.do?roomno="+ input.getRoomno();
 		
 		return webHelper.redirect(redirectUrl, "저장되었습니다."); 
 	}

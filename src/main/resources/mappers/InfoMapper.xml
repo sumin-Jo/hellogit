@@ -22,7 +22,7 @@
         <result property="commingday" column="commingday" />
         <result property="buildtype" column="buildtype" />
         <result property="content" column="content" />
-        <result property="room_no" column="room_no" />
+        <result property="roomno" column="roomno" />
     </resultMap>
 
     <!-- 단일행 조회를 위한 기능 정의 -->
@@ -31,18 +31,18 @@
         resultMap="infoMap">
         SELECT 
         feeitem, parking, pet, elevator, veranda, builtin, optionitem, loan, supplyarea, maxfloor, heater, commingday,
-        buildtype, content, room_no
+        buildtype, content, roomno
         FROM info 
-        WHERE room_no=#{room_no};
+        WHERE roomno=#{roomno};
     </select>
 
     <!-- 다중행 조회를 위한 기능 정의 -->
     <select id="selectList"
         parameterType="project.star.b2.model.Info"
         resultMap="infoMap">
-        SELECT feeitem, parking, pet, elevator, veranda, builtin, optionitem, loan, supplyarea, maxfloor, heater, commingday, buildtype, content, room_no 
+        SELECT feeitem, parking, pet, elevator, veranda, builtin, optionitem, loan, supplyarea, maxfloor, heater, commingday, buildtype, content, roomno 
         FROM info 
-        ORDER BY room_no ASC
+        ORDER BY roomno ASC
         
         <if test="listCount > 0">
             LIMIT #{offset}, #{listCount}
@@ -53,15 +53,15 @@
     <insert id="insertItem"
         parameterType="project.star.b2.model.Info"
         useGeneratedKeys="false"
-        keyProperty="room_no">
-        INSERT INTO info (feeitem, parking, pet, elevator, veranda, builtin, optionitem, loan, supplyarea, maxfloor, heater, commingday, buildtype, content, room_no) 
-        VALUES (#{feeitem}, #{parking}, #{pet}, #{elevator}, #{veranda}, #{builtin}, #{optionitem}, #{loan}, #{supplyarea}, #{maxfloor}, #{heater}, #{commingday}, #{buildtype}, #{content}, #{room_no});
+        keyProperty="roomno">
+        INSERT INTO info (feeitem, parking, pet, elevator, veranda, builtin, optionitem, loan, supplyarea, maxfloor, heater, commingday, buildtype, content, roomno) 
+        VALUES (#{feeitem}, #{parking}, #{pet}, #{elevator}, #{veranda}, #{builtin}, #{optionitem}, #{loan}, #{supplyarea}, #{maxfloor}, #{heater}, #{commingday}, #{buildtype}, #{content}, #{roomno});
     </insert>
 
     <!-- 데이터 삭제를 위한 기능 정의 -->
     <delete id="deleteItem"
         parameterType="project.star.b2.model.Info">
-        DELETE FROM info WHERE room_no=#{room_no};
+        DELETE FROM info WHERE roomno=#{roomno};
     </delete>
 
     <!-- 데이터 갱신을 위한 기능 정의 -->
@@ -69,7 +69,7 @@
         parameterType="project.star.b2.model.Info">
         UPDATE info SET feeitem=#{feeitem}, parking=#{parking}, pet=#{pet}, elevator=#{elevator}, veranda=#{veranda}, builtin=#{builtin}, optionitem=#{optionitem}, 
         loan=#{loan}, supplyarea=#{supplyarea}, maxfloor=#{maxfloor}, heater=#{heater}, commingday=#{commingday}, buildtype=#{buildtype}, content=#{content}
-        WHERE room_no=#{room_no};
+        WHERE roomno=#{roomno};
     </update>
     
     <!--

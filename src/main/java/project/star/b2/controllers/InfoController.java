@@ -95,17 +95,17 @@ public class InfoController {
 	public ModelAndView view(Model model) { 
 		/** 1) 필요한 변수값 생성 */
 		// 조회할 대상에 대한 PK값
-		int room_no = webHelper.getInt("room_no");
+		int roomno = webHelper.getInt("roomno");
 		
 		// 이 값이 존재하지 않는다면 데이터 조회가 불가능하므로 반드시 필수값으로 처리해야 한다.
-		if (room_no == 0) {
+		if (roomno == 0) {
 			return webHelper.redirect(null, "회원번호가 없습니다.");
 		}
 		
 		/** 2) 데이터 조회하기 */
 		// 데이터 조회에 필요한 조건값을 Beans에 저장하기
 		Info input = new Info();
-		input.setRoom_no(room_no);
+		input.setRoomno(roomno);
 		
 		// 조회결과를 저장할 객체 선언
 		Info output = null;
@@ -142,20 +142,20 @@ public class InfoController {
 		/** 1) 사용자가 입력한 파라미터 수신 및 유효성 검사 */
 		// 저장할 값들을 Beans에 담는다.
 		int feeitem = webHelper.getInt("feeitem");
-		String parking = webHelper.getString("parking");
-		String pet = webHelper.getString("pet");
-		String elevator = webHelper.getString("elevator");
-		String veranda = webHelper.getString("veranda");
-		String builtin = webHelper.getString("builtin");
+		int parking = webHelper.getInt("parking");
+		int pet = webHelper.getInt("pet");
+		int elevator = webHelper.getInt("elevator");
+		int veranda = webHelper.getInt("veranda");
+		int builtin = webHelper.getInt("builtin");
 		int optionitem = webHelper.getInt("optionitem");
-		String loan = webHelper.getString("loan");
+		int loan = webHelper.getInt("loan");
 		int supplyarea = webHelper.getInt("supplyarea");
 		int maxfloor = webHelper.getInt("maxfloor");
-		String heater = webHelper.getString("heater");
+		int heater = webHelper.getInt("heater");
 		String commingday = webHelper.getString("commingday");
 		String buildtype = webHelper.getString("buildtype");
 		String content = webHelper.getString("content");
-		int room_no = webHelper.getInt("room_no");
+		int roomno = webHelper.getInt("roomno");
 		
 		// 학과 이름은 필수 항목이므로 입력여부를 검사
 		// 위치는 미필수(null허용)이므로 입력 여부를 검사하지 않는다.
@@ -177,7 +177,7 @@ public class InfoController {
 		input.setCommingday(commingday);
 		input.setBuildtype(buildtype);
 		input.setContent(content);
-		input.setRoom_no(room_no);
+		input.setRoomno(roomno);
 		
 		
 		try {
@@ -192,7 +192,7 @@ public class InfoController {
 		
 		/** 3) 결과를 확인하기 위한 페이지 이동 */
 		// 저장 결과를 확인하기 위해서 데이터 저장시 생성된 PK값을 상세 페이지로 전달해야 한다.
-		String redirectUrl = contextPath + "/info/view.do?room_no="+ input.getRoom_no();
+		String redirectUrl = contextPath + "/info/view.do?roomno="+ input.getRoomno();
 		
 		return webHelper.redirect(redirectUrl, "저장되었습니다."); 
 	}
@@ -205,17 +205,17 @@ public class InfoController {
 	public ModelAndView edit(Model model) { 
 		
 		/** 1) 사용자가 입력한 파라미터 수신 및 유효성 검사 */
-		int room_no = webHelper.getInt("room_no");
+		int roomno = webHelper.getInt("roomno");
 		
 		// 이 값이 존재하지 않는다면 데이터 조회가 불가능하므로 반드시 필수값으로 처리해야 한다.
-		if (room_no == 0 ) {
+		if (roomno == 0 ) {
 			return webHelper.redirect(null, "방정보 번호가 없습니다.");
 		}
 		
 		/** 2) 데이터 조회하기 */
 		// 데이터 조회에 필요한 조건값을 Beans에 저장하기
 		Info input = new Info();
-		input.setRoom_no(room_no);
+		input.setRoomno(roomno);
 		
 		
 		// 조회결과를 저장할 객체 선언
@@ -241,20 +241,20 @@ public class InfoController {
 		
 		/** 1) 사용자가 입력한 파라미터 수신 및 유효성 검사 */
 		int feeitem = webHelper.getInt("feeitem");
-		String parking = webHelper.getString("parking");
-		String pet = webHelper.getString("pet");
-		String elevator = webHelper.getString("elevator");
-		String veranda = webHelper.getString("veranda");
-		String builtin = webHelper.getString("builtin");
+		int parking = webHelper.getInt("parking");
+		int pet = webHelper.getInt("pet");
+		int elevator = webHelper.getInt("elevator");
+		int veranda = webHelper.getInt("veranda");
+		int builtin = webHelper.getInt("builtin");
 		int optionitem = webHelper.getInt("optionitem");
-		String loan = webHelper.getString("loan");
+		int loan = webHelper.getInt("loan");
 		int supplyarea = webHelper.getInt("supplyarea");
 		int maxfloor = webHelper.getInt("maxfloor");
-		String heater = webHelper.getString("heater");
+		int heater = webHelper.getInt("heater");
 		String commingday = webHelper.getString("commingday");
 		String buildtype = webHelper.getString("buildtype");
 		String content = webHelper.getString("content");
-		int room_no = webHelper.getInt("room_no");
+		int roomno = webHelper.getInt("roomno");
 		
 		// 학과 이름은 필수 항목이므로 입력여부를 검사
 		// 위치는 미필수(null허용)이므로 입력 여부를 검사하지 않는다.
@@ -276,7 +276,7 @@ public class InfoController {
 		input.setCommingday(commingday);
 		input.setBuildtype(buildtype);
 		input.setContent(content);
-		input.setRoom_no(room_no);
+		input.setRoomno(roomno);
 		
 		try {
 			// 데이터 수정
@@ -289,7 +289,7 @@ public class InfoController {
 		
 		/** 3) 결과를 확인하기 위한 페이지 이동 */
 		// 저장 결과를 확인하기 위해서 데이터 저장시 생성된 PK값을 상세 페이지로 전달해야 한다.
-		String redirectUrl = contextPath + "/info/view.do?room_no=" + input.getRoom_no();
+		String redirectUrl = contextPath + "/info/view.do?roomno=" + input.getRoomno();
 		return webHelper.redirect(redirectUrl, "수정되었습니다."); 
 		
 		}
@@ -301,17 +301,17 @@ public class InfoController {
 	public ModelAndView delete(Model model) {
 		
 	/** 1) 사용자가 입력한 파라미터 수신 및 유효성 검사 */
-		int room_no = webHelper.getInt("room_no");
+		int roomno = webHelper.getInt("roomno");
 	
 	// 이 값이 존재하지 않는다면 데이터 조회가 불가능하므로 반드시 필수값으로 처리해야 한다.
-	if (room_no == 0 ) {
-		return webHelper.redirect(null, "방정보 번호(room_no)가 없습니다.");
+	if (roomno == 0 ) {
+		return webHelper.redirect(null, "방정보 번호(roomno)가 없습니다.");
 	}
 	
 	/** 2) 데이터 삭제하기 */
 	// 데이터 조회에 필요한 조건값을 Beans에 저장하기
 	Info input = new Info();
-	input.setRoom_no(room_no);
+	input.setRoomno(roomno);
 	
 	try {
 		// 데이터 삭제

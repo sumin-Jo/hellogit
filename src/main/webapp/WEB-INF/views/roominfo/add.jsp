@@ -64,8 +64,8 @@
 			<input type="text" name="region_3depth_name" id="region_3depth_name" />
 		</div>
 		<div>
-			<label for="user_no">회원정보: </label>
-			<input type="text" name="user_no" id="user_no" />
+			<label for="userno">회원정보: </label>
+			<input type="text" name="userno" id="userno" />
 		</div>
 		<div>
 			<label for="feeitem">관리비항목: </label>
