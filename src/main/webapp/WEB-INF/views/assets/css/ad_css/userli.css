@@ -1,8 +1,10 @@
 @charset "utf-8";
 
-#content { min-width: 1200px; }
+#content {
+	min-width: 1200px;
+}
 
-#content > div {
+#content>div {
 	width: 1200px;
 	margin: auto;
 }
@@ -12,13 +14,23 @@
 	margin-bottom: 15px;
 }
 
-#content h1 { 
-	float: left; 
+#content h1 {
+	float: left;
 	font-size: 30px;
 }
 
-#content .adm {	float: right; }
+#content .adm {
+	float: right;
+}
 
-#content .adm > div { padding-top: 10px; }
+#content .adm>div {
+	padding-top: 10px;
+}
 
-#content .input-group {	width: 300px; }
+#content .input-group {
+	width: 300px;
+}
+
+div.search_form {
+	float: right;
+}

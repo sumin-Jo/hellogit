@@ -69,11 +69,11 @@
 
 						<%-- 상세페이지로 이동하기 위한 URL --%>
 						<c:url value="/user/view.do" var="viewUrl">
-							<c:param name="no" value="${item.no}" />
+							<c:param name="userno" value="${item.userno}" />
 						</c:url>
 
 						<tr>
-							<td align="center">${item.no}</td>
+							<td align="center">${item.userno}</td>
 							<td align="center"><a href="${viewUrl}">${name}</a></td>
 							<td align="center">${email}</td>
 							<td align="center">${passwd}</td>

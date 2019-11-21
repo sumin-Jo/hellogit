@@ -5,7 +5,7 @@ import lombok.Data;
 /** 테이블 구조에 맞춘 Java Beans 생성 */
 @Data
 public class User {
-    private int no;
+    private int userno;
     private String name;
     private String email;
     private String passwd;
