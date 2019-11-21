@@ -41,7 +41,7 @@
 	<hr />
 	
 	<!-- 조회 결과 목록 -->
-	<table class="table table-spriped" border="1">
+	<table class="table table-striped" border="1">
 		<thead>
 			<tr>
                 <th width="100" class="text-center">회원번호</th>

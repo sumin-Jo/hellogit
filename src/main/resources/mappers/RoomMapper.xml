@@ -55,7 +55,7 @@
             </if>
         </where>
         
-        ORDER BY no ASC
+        ORDER BY roomno ASC
         
         <if test="listCount > 0">
             LIMIT #{offset}, #{listCount}

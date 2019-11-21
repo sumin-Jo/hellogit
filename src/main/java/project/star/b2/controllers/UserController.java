@@ -105,17 +105,17 @@ public class UserController {
 	public ModelAndView view(Model model) { 
 		/** 1) 필요한 변수값 생성 */
 		// 조회할 대상에 대한 PK값
-		int no = webHelper.getInt("no");
+		int userno = webHelper.getInt("userno");
 		
 		// 이 값이 존재하지 않는다면 데이터 조회가 불가능하므로 반드시 필수값으로 처리해야 한다.
-		if (no == 0) {
+		if (userno == 0) {
 			return webHelper.redirect(null, "회원번호가 없습니다.");
 		}
 		
 		/** 2) 데이터 조회하기 */
 		// 데이터 조회에 필요한 조건값을 Beans에 저장하기
 		User input = new User();
-		input.setNo(no);
+		input.setUserno(userno);
 		
 		// 조회결과를 저장할 객체 선언
 		User output = null;
@@ -199,7 +199,7 @@ public class UserController {
 		
 		/** 3) 결과를 확인하기 위한 페이지 이동 */
 		// 저장 결과를 확인하기 위해서 데이터 저장시 생성된 PK값을 상세 페이지로 전달해야 한다.
-		String redirectUrl = contextPath + "/user/view.do?no="+ input.getNo();
+		String redirectUrl = contextPath + "/user/view.do?no="+ input.getUserno();
 		
 		return webHelper.redirect(redirectUrl, "저장되었습니다."); 
 	}
@@ -212,17 +212,17 @@ public class UserController {
 	public ModelAndView edit(Model model) { 
 		
 		/** 1) 사용자가 입력한 파라미터 수신 및 유효성 검사 */
-		int no = webHelper.getInt("no");
+		int userno = webHelper.getInt("userno");
 		
 		// 이 값이 존재하지 않는다면 데이터 조회가 불가능하므로 반드시 필수값으로 처리해야 한다.
-		if (no == 0 ) {
+		if (userno == 0 ) {
 			return webHelper.redirect(null, "학과번호가 없습니다.");
 		}
 		
 		/** 2) 데이터 조회하기 */
 		// 데이터 조회에 필요한 조건값을 Beans에 저장하기
 		User input = new User();
-		input.setNo(no);
+		input.setUserno(userno);
 		
 		
 		// 조회결과를 저장할 객체 선언
@@ -247,7 +247,7 @@ public class UserController {
 	public ModelAndView edit_ok(Model model) {
 		
 		/** 1) 사용자가 입력한 파라미터 수신 및 유효성 검사 */
-		int no = webHelper.getInt("no");
+		int userno = webHelper.getInt("userno");
 		String name = webHelper.getString("name");
 		String email = webHelper.getString("email");
 		String passwd = webHelper.getString("passwd");
@@ -258,7 +258,7 @@ public class UserController {
 		
 		// 학과 이름은 필수 항목이므로 입력여부를 검사
 		// 위치는 미필수(null허용)이므로 입력 여부를 검사하지 않는다.
-		if (no == 0) {
+		if (userno == 0) {
 			return webHelper.redirect(null, "회원번호가 없습니다.");
 		}
 		
@@ -270,7 +270,7 @@ public class UserController {
 		/** 2) 데이터 수정하기 */
 		// 저장할 값들을 Beans에 담는다.
 		User input = new User();
-		input.setNo(no);
+		input.setUserno(userno);
 		input.setName(name);
 		input.setEmail(email);
 		input.setPasswd(passwd);
@@ -290,7 +290,7 @@ public class UserController {
 		
 		/** 3) 결과를 확인하기 위한 페이지 이동 */
 		// 저장 결과를 확인하기 위해서 데이터 저장시 생성된 PK값을 상세 페이지로 전달해야 한다.
-		String redirectUrl = contextPath + "/user/view.do?no=" + input.getNo();
+		String redirectUrl = contextPath + "/user/view.do?no=" + input.getUserno();
 		return webHelper.redirect(redirectUrl, "수정되었습니다."); 
 		
 		}
@@ -302,17 +302,17 @@ public class UserController {
 	public ModelAndView delete(Model model) {
 		
 	/** 1) 사용자가 입력한 파라미터 수신 및 유효성 검사 */
-		int no = webHelper.getInt("no");
+		int userno = webHelper.getInt("userno");
 	
 	// 이 값이 존재하지 않는다면 데이터 조회가 불가능하므로 반드시 필수값으로 처리해야 한다.
-	if (no == 0 ) {
+	if (userno == 0 ) {
 		return webHelper.redirect(null, "회원번호가 없습니다.");
 	}
 	
 	/** 2) 데이터 삭제하기 */
 	// 데이터 조회에 필요한 조건값을 Beans에 저장하기
 	User input = new User();
-	input.setNo(no);
+	input.setUserno(userno);
 	
 	try {
 		// 데이터 삭제
