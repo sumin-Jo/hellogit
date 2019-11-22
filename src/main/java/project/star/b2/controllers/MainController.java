@@ -14,7 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import project.star.b2.helper.PageData;
 import project.star.b2.helper.WebHelper;
+import project.star.b2.model.Gallery;
 import project.star.b2.model.Room;
+import project.star.b2.service.GalleryService;
 import project.star.b2.service.RoomService;
 
 @Controller
@@ -27,6 +29,7 @@ public class MainController {
 	/** Service 패턴 구현체 주입 */
 	// --> import project.star.b2.service.RoomService;
 	@Autowired RoomService roomService;
+	@Autowired GalleryService galleryService;
 	
 	/** "/프로젝트이름" 에 해당하는 ContextPath 변수 주입 */
 	// --> import org.springframework.beans.factory.annotation.Value;
@@ -108,25 +111,26 @@ public class MainController {
 		int listCount = 24;									// 한 페이지당 표시할 목록 수
 		int pageCount = 7;									// 한 그룹당 표시할 페이지 번호 수
 		
+		
 		/** 2) 데이터 조회하기 */
 		// 조회에 필요한 조건값(검색어)를 Beans에 담는다.
-		Room input = new Room();
-		input.setRegion_2depth_name(keyword);
+//		Room input = new Room();
+		Gallery input = new Gallery();
 		
-		List<Room> output = null;
+		List<Gallery> output = null;
 		PageData pageData = null;
 		
 		try {
 			// 전체 게시글 수 조회
-			totalCount = roomService.getRoomCount(input);
+			totalCount = galleryService.getGalleryCount(input);
 			// 페이지 번호 계산 --> 계산결과를 로그로 출력될 것이다.
 			pageData = new PageData(nowPage, totalCount, listCount, pageCount);
 			
 			// SQL의 LIMIT절에서 사용될 값을 Beans의 static 변수에 저장
-			Room.setOffset(pageData.getOffset());
-			Room.setListCount(pageData.getListCount());
+			Gallery.setOffset(pageData.getOffset());
+			Gallery.setListCount(pageData.getListCount());
 						
-			output = roomService.getRoomGalleryList(input);
+			output = galleryService.getGalleryList(input);
 		} catch (Exception e) {
 			return webHelper.redirect(null, e.getLocalizedMessage());
 		}
