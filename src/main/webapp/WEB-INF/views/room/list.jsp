@@ -70,7 +70,7 @@
 						<c:set var="longitude" value="${item.longitude}" />
 						<c:set var="region_2depth_name" value="${item.region_2depth_name}" />
 						<c:set var="region_3depth_name" value="${item.region_3depth_name}" />
-						<c:set var="user_no" value="${item.user_no}" />
+						<c:set var="userno" value="${item.userno}" />
 
 
 						<%--검색어가 있다면? --%>
@@ -86,11 +86,11 @@
 
 						<%-- 상세페이지로 이동하기 위한 URL --%>
 						<c:url value="/room/view.do" var="viewUrl">
-							<c:param name="no" value="${item.no}" />
+							<c:param name="no" value="${item.roomno}" />
 						</c:url>
 
 						<tr>
-							<td align="center">${item.no}</td>
+							<td align="center">${item.roomno}</td>
 							<td align="center"><a href="${viewUrl}">${title}</a></td>
 							<td align="center">${floor}</td>
 							<td align="center">${area}</td>
@@ -104,7 +104,7 @@
 							<td align="center">${longitude}</td>
 							<td align="center">${region_2depth_name}</td>
 							<td align="center">${region_3depth_name}</td>
-							<td align="center">${user_no}</td>		
+							<td align="center">${userno}</td>		
 						</tr>
 					</c:forEach>
 				</c:otherwise>

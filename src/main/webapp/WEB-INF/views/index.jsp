@@ -41,11 +41,11 @@
           <p class="text-center"><span class="text-center">어떤 동네, 어떤 방</span>에서</p>
           <p>살고 싶으신가요?</p>
         </div>
-        <form>
+        <form method="get" action="${pageContext.request.contextPath}/main/search.do">
           <div>
-            <input type="text" name="" id="searching-for">
+            <input type="text" name="keyword" id="keyword" value="${keyword}">
             <i class="glyphicon glyphicon-search"></i>
-            <button href="#" class="btn btn-primary">방 찾기</button>
+            <button type="submit" href="#" class="btn btn-primary">방 찾기</button>
           </div>
         </form>
       </div>
@@ -65,7 +65,7 @@
             <div class="slide-div3 slider regular" style="right: 0px;">
 
               <div>
-                <a class="slide-a" href="${pageContext.request.contextPath}/main/search.do">
+                <a class="slide-a" href="${pageContext.request.contextPath}/main/search2.do?roomno=202">
                  <div class="slide-a-div1">
                    <div class="slide-a-div1-up1"></div>
                    <div class="slide-a-div1-down">
@@ -77,7 +77,7 @@
               </div>
 
               <div>
-                <a class="slide-a" href="${pageContext.request.contextPath}/main/search.do">
+                <a class="slide-a" href="${pageContext.request.contextPath}/main/search2.do?roomtype=오피스텔">
                   <div class="slide-a-div1">
                     <div class="slide-a-div1-up2"></div>
                     <div class="slide-a-div1-down">
@@ -514,7 +514,6 @@
 			$("#searching-for").focus();
 		});
 	});
-	
 </script>
 
 </body>

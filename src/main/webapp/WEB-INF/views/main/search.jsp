@@ -1,16 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <%@ include file="../assets/inc/meta.jsp"%>
 <!-- css 참조 -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/ma_css/search.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/assets/css/ma_css/search.css">
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/plugin/ion.rangeSlider.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/plugin/ion.rangeSlider.css">
 
 </head>
 
@@ -24,16 +27,19 @@
 		<div id="content">
 			<div id="search" class="clearfix">
 				<div class="searchtab">
-					<form id="search-form">
-						<input type="text" placeholder="검색바" name="search" /> <i class="glyphicon glyphicon-search"></i>
-						<button type="submit"></button>
+					<form id="search-form" method="get"
+						action="${pageContext.request.contextPath}/main/search.do">
+						<input type="search" placeholder="검색바" name="search" id="keyword"
+							value="${keyword}" /> <i class="glyphicon glyphicon-search"></i>
+						<button type="submit">검색</button>
 					</form>
 				</div>
 				<!-- 전체 필터 -->
 				<div class="filters clearfix">
 					<!-- 개별 필터 -->
 					<div class="btn-group filter">
-						<button type="button" class="btn dropdown-toggle btn-rt" data-toggle="dropdown">
+						<button type="button" class="btn dropdown-toggle btn-rt"
+							data-toggle="dropdown">
 							원룸,투·쓰리룸,오피스텔 <span class="caret"></span>
 						</button>
 						<div class="dropdown-menu width1" role="menu">
@@ -41,20 +47,17 @@
 								<h1>방종류</h1>
 								<p>중복 선택이 가능합니다.</p>
 								<ul>
-									<li><label>
-										<input type="checkbox" name="room-type" value="oneroom" checked />
-										<span class="checkBox"></span>
-										<span class="checkText">원룸</span>
+									<li><label> <input type="checkbox"
+											name="room-type" value="oneroom" checked /> <span
+											class="checkBox"></span> <span class="checkText">원룸</span>
 									</label></li>
-									<li><label>
-										<input type="checkbox" name="room-type" value="tworoom" checked />
-										<span class="checkBox"></span>
-										<span class="checkText">투·쓰리룸</span>
+									<li><label> <input type="checkbox"
+											name="room-type" value="tworoom" checked /> <span
+											class="checkBox"></span> <span class="checkText">투·쓰리룸</span>
 									</label></li>
-									<li><label>
-										<input type="checkbox" name="room-type" value="officetel" checked />
-										<span class="checkBox"></span>
-										<span class="checkText">오피스텔</span>
+									<li><label> <input type="checkbox"
+											name="room-type" value="officetel" checked /> <span
+											class="checkBox"></span> <span class="checkText">오피스텔</span>
 									</label></li>
 								</ul>
 							</form>
@@ -63,27 +66,25 @@
 					<!-- 개별 필터 끝 -->
 					<!-- 개별 필터 -->
 					<div class="btn-group filter">
-						<button type="button" class="btn dropdown-toggle btn-st" data-toggle="dropdown">
+						<button type="button" class="btn dropdown-toggle btn-st"
+							data-toggle="dropdown">
 							월세,전세,매매 <span class="caret"></span>
 						</button>
 						<div class="dropdown-menu width1" role="menu">
 							<h1>매물종류</h1>
 							<p>중복 선택이 가능합니다.</p>
 							<ul>
-								<li><label>
-									<input type="checkbox" name="sale-type" value="monthly" checked />
-									<span class="checkBox"></span>
-									<span class="checkText">월세</span>
+								<li><label> <input type="checkbox" name="sale-type"
+										value="monthly" checked /> <span class="checkBox"></span> <span
+										class="checkText">월세</span>
 								</label></li>
-								<li><label>
-									<input type="checkbox" name="sale-type" value="charter" checked />
-									<span class="checkBox"></span>
-									<span class="checkText">전세</span>
+								<li><label> <input type="checkbox" name="sale-type"
+										value="charter" checked /> <span class="checkBox"></span> <span
+										class="checkText">전세</span>
 								</label></li>
-								<li><label>
-									<input type="checkbox" name="sale-type" value="buying" checked />
-									<span class="checkBox"></span>
-									<span class="checkText">매매</span>
+								<li><label> <input type="checkbox" name="sale-type"
+										value="buying" checked /> <span class="checkBox"></span> <span
+										class="checkText">매매</span>
 								</label></li>
 							</ul>
 						</div>
@@ -91,7 +92,8 @@
 					<!-- 개별 필터 끝 -->
 					<!-- 개별 필터 -->
 					<div class="btn-group filter">
-						<button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+						<button type="button" class="btn dropdown-toggle"
+							data-toggle="dropdown">
 							가격대 <span class="caret"></span>
 						</button>
 						<div class="dropdown-menu width2" role="menu">
@@ -139,7 +141,8 @@
 					<!-- 개별 필터 끝 -->
 					<!-- 개별 필터 -->
 					<div class="btn-group filter">
-						<button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+						<button type="button" class="btn dropdown-toggle"
+							data-toggle="dropdown">
 							관리비 <span class="caret"></span>
 						</button>
 						<div class="dropdown-menu width2" role="menu">
@@ -163,7 +166,8 @@
 					<!-- 개별 필터 끝 -->
 					<!-- 개별 필터 -->
 					<div class="btn-group filter">
-						<button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+						<button type="button" class="btn dropdown-toggle"
+							data-toggle="dropdown">
 							방크기 <span class="caret"></span>
 						</button>
 						<div class="dropdown-menu pull-right width2" role="menu">
@@ -196,7 +200,7 @@
 				<div class="gallery">
 					<!-- 갤러리 상단 영역 -->
 					<div class="gallery-header">
-						<span>조건에 맞는 방 </span> <span class="room-count">0000</span><span>개</span>
+						<span>조건에 맞는 방 </span> <span class="room-count">${totalCount}</span><span>개</span>
 					</div>
 					<!-- 갤러리 상단 영역 끝 -->
 					<!-- 갤러리 내용 + 하단 영역 -->
@@ -205,68 +209,125 @@
 						<div class="gallery-content clearfix">
 							<ul id="gallery-list">
 								<c:choose>
-								<%-- 조회 결과가 없는 경우 --%>
-								<c:when test="${output == null || fn:length(output) == 0}">
-									<p>조회 결과가 없습니다.</p>
-								</c:when>
-								<%-- 갤러리 시작 --%>
-								<c:otherwise>
-								<c:forEach var="item" items="${output}" varStatus="status">
-								<li>
-									<div class="recent-div5">
-										<div class="recent-div6">
-											<%-- 좋아요 버튼 --%>
-											<div class="recent-div7">
-												<div class="recent-div8 off" data-value="on"></div>
-											</div>
-											<%-- 좋아요 끝 --%>
-											<%-- 전체 링크화 --%>
-											<a target="_blank" rel="" class="recent-a" href="${pageContext.request.contextPath}/main/rmdt.do">
-												<!-- 이미지 -->
-												<div class="recent-a-div"></div>
-												<!-- 확인매물 div -->
-												<div class="recent-a-confirm">
-													<div class="recent-a-confirm-div" type="">
-														<span class="bold">확인매물</span> <span>${item.confirmdate}</span>
+									<%-- 조회 결과가 없는 경우 --%>
+									<c:when test="${output == null || fn:length(output) == 0}">
+										<p>조회 결과가 없습니다.</p>
+									</c:when>
+									<%-- 갤러리 시작 --%>
+									<c:otherwise>
+										<c:forEach var="item" items="${output}" varStatus="status">
+											<li>
+												<div class="recent-div5">
+													<div class="recent-div6">
+														<%-- 좋아요 버튼 --%>
+														<div class="recent-div7">
+															<div class="recent-div8 off" data-value="on"></div>
+														</div>
+														<%-- 좋아요 끝 --%>
+														<%-- 전체 링크화 --%>
+														<a target="_blank" rel="" class="recent-a"
+															href="${pageContext.request.contextPath}/main/rmdt.do">
+															<!-- 이미지 -->
+															<div class="recent-a-div"></div> <c:if
+																test="${item.confirmdate != null}">
+																<%-- 확인매물 div --%>
+																<div class="recent-a-confirm">
+																	<div class="recent-a-confirm-div" type="">
+																		<span class="bold">확인매물</span> <span>${item.confirmdate}</span>
+																	</div>
+																</div>
+																<%-- 확인매물 끝 --%>
+															</c:if>
+															<p class="recent-a-p1">${item.roomtype}</p>
+															<p class="recent-a-p2">
+																<span>전세 1억4000</span>
+															</p>
+															<p class="recent-a-p34">${item.floor}층,
+																${item.area}m², 관리비 ${item.fee}만</p>
+															<p class="recent-a-p34">${item.title}</p>
+														</a>
 													</div>
 												</div>
-												<%-- 확인매물 끝 --%>
-												<p class="recent-a-p1">${item.roomtype}</p>
-												<p class="recent-a-p2">
-													<span>전세 1억4000</span>
-												</p>
-												<p class="recent-a-p34">${item.floor}층, ${item.area}m², 관리비 ${item.fee}만</p>
-												<p class="recent-a-p34">${item.title}</p>
-											</a>
-										</div>
-									</div>
-								</li>
-								</c:forEach>
-								</c:otherwise>
-								<%-- 각 갤러리 끝 --%>
+											</li>
+										</c:forEach>
+									</c:otherwise>
+									<%-- 각 갤러리 끝 --%>
 								</c:choose>
 							</ul>
 						</div>
 						<!-- 갤러리 내용 영역 -->
 						<!-- 갤러리 하단 영역 -->
 						<div class="gallery-footer">
+							<%-- gallery-index --%>
 							<div class="gallery-index">
-								<button class="prev-btn">
-									<span>&lt;</span>
-								</button>
+								<!-- 페이지 번호 구현 -->
+								<%-- 이전 그룹에 대한 링크 --%>
+								<c:choose>
+									<%-- 이전 그룹으로 이동 가능하다면? --%>
+									<c:when test="${pageData.prevPage > 0}">
+										<%-- 이동할 URL 생성 --%>
+										<c:url value="/main/search.do" var="prevPageUrl">
+											<c:param name="page" value="${pageData.prevPage}" />
+										</c:url>
+										<a href="${prevPageUrl}">
+											<button class="prev-btn">
+												<span>&lt;</span>
+											</button>
+										</a>
+									</c:when>
+									<c:otherwise>
+										<button class="prev-btn">
+											<span>&lt;</span>
+										</button>
+									</c:otherwise>
+								</c:choose>
+
+								<%-- 페이지 번호 (시작 페이지 부터 끝 페이지까지 반복) --%>
 								<ul class="index-list">
-									<li><a class="index-indiv index-active">1</a></li>
-									<li><a class="index-indiv">2</a></li>
-									<li><a class="index-indiv">3</a></li>
-									<li><a class="index-indiv">4</a></li>
-									<li><a class="index-indiv">5</a></li>
-									<li><a class="index-indiv">6</a></li>
-									<li><a class="index-indiv">7</a></li>
+									<c:forEach var="i" begin="${pageData.startPage}"
+										end="${pageData.endPage}" varStatus="status">
+										<%-- 이동할 URL 생성 --%>
+										<c:url value="/main/search.do" var="pageUrl">
+											<c:param name="page" value="${i}" />
+										</c:url>
+
+										<%-- 페이지 번호 출력 --%>
+										<c:choose>
+											<%-- 현재 머물고 있는 페이지 번호를 출력할 경우 링크 적용 안함 --%>
+											<c:when test="${pageData.nowPage == i}">
+												<li><a class="index-indiv index-active">${i}</a></li>
+											</c:when>
+											<%-- 나머지 페이지의 경우 링크 적용함 --%>
+											<c:otherwise>
+												<li><a class="index-indiv" href="${pageUrl}">${i}</a></li>
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
 								</ul>
-								<button class="next-btn">
-									<span>&gt;</span>
-								</button>
+
+								<%-- 다음 그룹에 대한 링크 --%>
+								<c:choose>
+									<%-- 다음 그룹으로 이동 가능하다면? --%>
+									<c:when test="${pageData.nextPage > 0}">
+										<%-- 이동할 URL 생성 --%>
+										<c:url value="/main/search.do" var="nextPageUrl">
+											<c:param name="page" value="${pageData.nextPage}" />
+											<c:param name="keyword" value="${keyword}" />
+										</c:url>
+										<a href="${nextPageUrl}">
+											<button class="next-btn">
+												<span>&gt;</span>
+											</button>
+										</a>
+									</c:when>
+									<c:otherwise>
+										<button class="next-btn">
+											<span>&gt;</span>
+										</button>
+									</c:otherwise>
+								</c:choose>
 							</div>
+							<%-- gallery-index --%>
 						</div>
 						<!-- 갤러리 하단 영역 끝 -->
 					</div>
@@ -287,10 +348,14 @@
 		<div id="footer"></div>
 	</div>
 	<!-- Javascript -->
-	<script src="${pageContext.request.contextPath}/assets/js/jquery-1.10.2.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=49ad4eb7ef14b56eb0eca723e4dd1eaa&libraries=clusterer,services"></script>
-	<script src="${pageContext.request.contextPath}/assets/plugin/ion.rangeSlider.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/assets/js/jquery-1.10.2.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=49ad4eb7ef14b56eb0eca723e4dd1eaa&libraries=clusterer,services"></script>
+	<script
+		src="${pageContext.request.contextPath}/assets/plugin/ion.rangeSlider.js"></script>
 	<script type="text/javascript">
 		/* 브라우저 크기에 따라 갤러리와 지도영역 높이 변경 */
 		function contentSize() {
@@ -305,10 +370,10 @@
 			$(window).resize(function(e) {
 				contentSize();
 			});
-			
+
 			/* 조건에 맞는 방 개수 */
-			var n = $(".recent-div5").length;
-			$(".room-count").html(n);
+			/* var n = $(".recent-div5").length;
+			$(".room-count").html(n); */
 
 			$(".recent-div8").click(function(e) {
 				$(this).toggleClass('on off');
@@ -521,37 +586,36 @@
 							});
 
 			// 검색값 가져와서 지도 위치 변경하기
-			$("#search-form").submit(
-					function(e) {
-						e.preventDefault();
+	         $("#search-form").submit(
+	            function(e) {
+	               e.preventDefault();
+	      
+	               // 장소 검색 객체 생성
+	               var ps = new kakao.maps.services.Places();
+	               // input값 가져오기
+	               var value = $('input[name=search]').val();
 
-						// 장소 검색 객체 생성
-						var ps = new kakao.maps.services.Places();
-						// input값 가져오기
-						var value = $('input[name=search]').val();
+	               // 키워드로 장소 검색
+	               ps.keywordSearch(value, placesSearchCB);
 
-						// 키워드로 장소 검색
-						ps.keywordSearch(value, placesSearchCB);
+	               // 키워드 검색 완료 시 호출되는 콜백함수
+	               function placesSearchCB(data, status, pagination) {
+	                  if (status === kakao.maps.services.Status.OK) {
 
-						// 키워드 검색 완료 시 호출되는 콜백함수
-						function placesSearchCB(data, status, pagination) {
-							if (status === kakao.maps.services.Status.OK) {
+	                     // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+	                     // LatLngBounds 객체에 좌표 추가
+	                     var bounds = new kakao.maps.LatLngBounds();
 
-								// 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
-								// LatLngBounds 객체에 좌표 추가
-								var bounds = new kakao.maps.LatLngBounds();
+	                     for (var i = 0; i < data.length; i++) {
+	                        /* displayMarker(data[i]); */
+	                        bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+	                     }
 
-								for (var i = 0; i < data.length; i++) {
-									/* displayMarker(data[i]); */
-									bounds.extend(new kakao.maps.LatLng(
-											data[i].y, data[i].x));
-								}
-
-								// 검색된 장소 위치를 기준으로 지도 범위 재설정
-								map.setBounds(bounds);
-							}
-						}
-					})
+	                     // 검색된 장소 위치를 기준으로 지도 범위 재설정
+	                     map.setBounds(bounds);
+	                  }
+	               }; // end placesSearchCB()
+	            }); // end submit()
 
 			// 지도 확대 메서드
 			function zoomIn() {
