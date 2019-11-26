@@ -14,8 +14,12 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/ma_css/main.css">
 
 <!--  slider css -->
+
+<%--쓰지 않을 css --%>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/plugin/slick/slick.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/plugin/slick/slick-theme.css">
+<!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> -->
+
 
 </head>
 <body>
@@ -41,11 +45,11 @@
           <p class="text-center"><span class="text-center">어떤 동네, 어떤 방</span>에서</p>
           <p>살고 싶으신가요?</p>
         </div>
-        <form method="get" action="${pageContext.request.contextPath}/main/search.do">
+        <form>
           <div>
-            <input type="text" name="keyword" id="keyword" value="${keyword}">
+            <input type="text" name="" id="searching-for">
             <i class="glyphicon glyphicon-search"></i>
-            <button type="submit" href="#" class="btn btn-primary">방 찾기</button>
+            <button href="#" class="btn btn-primary">방 찾기</button>
           </div>
         </form>
       </div>
@@ -65,7 +69,7 @@
             <div class="slide-div3 slider regular" style="right: 0px;">
 
               <div>
-                <a class="slide-a" href="${pageContext.request.contextPath}/main/search2.do?roomno=202">
+                <a class="slide-a" href="${pageContext.request.contextPath}/main/search.do">
                  <div class="slide-a-div1">
                    <div class="slide-a-div1-up1"></div>
                    <div class="slide-a-div1-down">
@@ -77,7 +81,7 @@
               </div>
 
               <div>
-                <a class="slide-a" href="${pageContext.request.contextPath}/main/search2.do?roomtype=오피스텔">
+                <a class="slide-a" href="${pageContext.request.contextPath}/main/search.do">
                   <div class="slide-a-div1">
                     <div class="slide-a-div1-up2"></div>
                     <div class="slide-a-div1-down">
@@ -471,20 +475,20 @@
 <%@ include file="assets/inc/ma_bottom.jsp"%>
 
 
-<script src="${pageContext.request.contextPath}/assets/js/jquery-1.10.2.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/plugin/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/assets/plugin/slick/slick.min.js" type="text/javascript" charset="utf-8"></script>
+
 
 <script>
 	/* 슬라이더 세팅 */
-	$(document).on('ready', function() {
+
 		$(".regular").slick({
 			dots: true,
 	      	infinite: true,
 		    slidesToShow: 6,
 	    	slidesToScroll: 5
 	    });
-	});
 
 	/* 좋아요 클릭 -> 하트 색 변경 */
 	$(function() {
@@ -514,6 +518,7 @@
 			$("#searching-for").focus();
 		});
 	});
+	
 </script>
 
 </body>

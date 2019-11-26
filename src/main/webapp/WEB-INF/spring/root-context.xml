@@ -40,7 +40,7 @@
         <!-- 데이터베이스 계정명 -->
         <prop key="dbUsername">root</prop>
         <!-- 데이터베이스 비밀번호 -->
-        <prop key="dbPassword">root</prop>
+        <prop key="dbPassword">rootroot</prop>
         <!-- Mapper 파일들이 위치할 '/src/main/resources' 하위의 경로  -->
         <prop key="mapperPath">/mappers/**/*Mapper.xml</prop>
 	</util:properties>
@@ -59,6 +59,9 @@
 	
 	<!-- RegexHelper 주입 설정 -->
 	<bean id="regexHelper" class="project.star.b2.helper.RegexHelper" />
+	
+	<!-- RetrofitHelper 주입 설정 -->
+	<bean id="RetrofitHelper" class="project.star.b2.helper.RetrofitHelper" />
 	
 	<!-- 메일 발송에 필요한 정보를 저장하는 객체 정의 -->
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">

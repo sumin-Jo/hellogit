@@ -25,7 +25,9 @@
         <%@ include file="../assets/inc/ho_header.jsp"%>
     <!-- header 끝 -->
     <!-- content 시작 -->
+    
     <div id="content">
+    	<form method="post" action="${pageContext.request.contextPath}/roominfo/add_ok.do">
         <div class="sell_room_box">
             <h1 class="sell_room">공실 등록하기</h1>
         </div>
@@ -34,6 +36,7 @@
             <li>좋아요를 많이 받은 방은 인기매물에 등록됩니다.</li>
         </ul>
         <!-- 매물종류 --> 
+        
         <div class="tableframe" name="roomType">
             <h1>매물 종류</h1>
                 <table>
@@ -41,16 +44,16 @@
                         <tr>
                             <th>종류 선택</th>
                             <td class="bang_choice">
-                                <label class="Square_box"><input type="radio" name="room_type" >
+                                <label class="Square_box"><input type="radio" name="roomtype" >
                                     <p>원룸</p>
                                 </label>
-                                <label class="Square_box"><input type="radio" name="room_type" checked />
+                                <label class="Square_box"><input type="radio" name="roomtype" checked />
                                     <p>투룸</p>
                                 </label>
-                                <label class="Square_box"><input type="radio" name="room_type">
+                                <label class="Square_box"><input type="radio" name="roomtype">
                                     <p>쓰리룸</p>
                                 </label>
-                                <label class="Square_box"><input type="radio" class="ab" name="room_type">
+                                <label class="Square_box"><input type="radio" class="ab" name="roomtype">
                                     <p>오피스텔(도시형)</p>
                                 </label>
                             </td>
@@ -58,16 +61,16 @@
                         <tr>
                             <th>건물 유형</th>
                             <td class="bang_choice">
-                                <label class="Square_box"><input type="radio" name="building_type">
+                                <label class="Square_box"><input type="radio" name="buildtype">
                                     <p>단독주택</p>
                                 </label>
-                                <label class="Square_box"><input type="radio" name="building_type">
+                                <label class="Square_box"><input type="radio" name="buildtype">
                                     <p>다가구주택</p>
                                 </label>
-                                <label class="Square_box"><input type="radio" name="building_type">
+                                <label class="Square_box"><input type="radio" name="buildtype">
                                     <p>빌라/연립/다세대</p>
                                 </label>
-                                <label class="Square_box"><input type="radio" class="ab1" name="building_type">
+                                <label class="Square_box"><input type="radio" class="ab1" name="buildtype">
                                     <p>오피스텔</p>
                                 </label>
                             </td>
@@ -91,9 +94,15 @@
                                     <form class="loc_div">
                                         <input type="text" class="address1" placeholder=" 주소" readonly>
                                         <input type="button" class="address2" onclick="sample5_execDaumPostcode()" value="주소 검색">
+                                        <input type="hidden" name="region_2depth_name" >
+                                        <input type="hidden" name="region_3depth_name" >
+                                        <%-- longitude x축 경도 --%>
+                                        <input type="hidden" name="longitude" id="longitude" >
+                                        <%-- latitude y축 위도 --%>
+                                        <input type="hidden" name="latitude" id="latitude" >
                                     </form>
                                     <div class="loc_de">
-                                        <input type="text" style="border:none"  id="point_address" placeholder="" readonly>
+                                        <input type="text" style="border:none" name="address" id="point_address" placeholder="" readonly>
                                     </div>
                                     <div class="dongho_div">
                                         <div class="dong"><input type="text" class="dongho input_box" name="dong" placeholder="예)101동" value=""></div>
@@ -134,7 +143,7 @@
                                 <button type='button' class='deal_btn1'>전세</button>
                                 <button type='button' class='deal_btn2'>매매</button>
                                 <div class="short">
-                                    <label class="deal_check_box" size="22"><input type="checkbox" class="PcMeW" name="short_lease" value=""><span class="CheckBox"></span>
+                                    <label class="deal_check_box" size="22"><input type="checkbox" class="PcMeW" name="short_room" value=""><span class="CheckBox"></span>
                                         <span class="deal_text">단기가능</span>
                                     </label>
                                 <p class="deal_text1">
@@ -159,7 +168,7 @@
                         </th>
                             <td class="base_line">
                                 <p class="base_title">공급 면적</p>
-                                <input type="text" id="pyeong1" class="base_pd input_box" onkeyup="calculator(1);">
+                                <input type="text" id="pyeong1" class="base_pd input_box" name="supplyarea" onkeyup="calculator(1);">
                                 <p class="base_kiho">평</p>
                                 <input type="text" id="pyeong2" class="base_pd input_box" onkeyup="calculator(2);">
                                 <p class="base_kiho">㎡</p>
@@ -167,7 +176,7 @@
                             <th rowspan="2">건물 층수</th>
                             <td class="base_line">
                                 <p class="base_title">건물 층수</p>
-                                <select class="floor1 hRFrgm" name="building_floor">
+                                <select class="floor1 hRFrgm" name="maxfloor">
                                     <option value="">건물 층수 선택</option>
                                     <option value="1">1층</option>
                                     <option value="2">2층</option>
@@ -195,14 +204,14 @@
                         <tr>
                             <td class="base_line">
                                 <p class="base_title">전용 면적</p>
-                                <input type="text" id="ator1" class="base_pd input_box" onkeyup="ator(1);">
+                                <input type="text" id="ator1" class="base_pd input_box" name="area" onkeyup="ator(1);">
                                 <p class=" base_kiho">평</p>
                                 <input type="text" id="ator2" class="base_pd input_box" onkeyup="ator(2);">
                                 <p class="base_kiho">㎡</p>
                             </td>
                             <td class="base_line">
                                 <p class=" base_title">해당 층수</p>
-                                <select class="floor1 hRFrgm" name="room_floor">
+                                <select class="floor1 hRFrgm" name="floor">
                                     <option value="">해당 층수 선택</option>
                                     <option value="-1">반지층</option>
                                     <option value="0">옥탑</option>
@@ -232,7 +241,7 @@
                         <tr>
                             <th>난방 종류</th>
                             <td class="base_line" colspan="3">
-                                <select class="heating hRFrgm" name="heating_type">
+                                <select class="heating hRFrgm" name="heater">
                                     <option value="">난방 종류 선택</option>
                                     <option value="0">중앙 난방</option>
                                     <option value="1">개별 난방</option>
@@ -243,13 +252,13 @@
                         <tr>
                             <th>입주 가능일</th>
                             <td class="base_line" colspan="3">
-                             <label class="in_date"><input type="radio" name="datetime">
+                             <label class="in_date"><input type="radio" name="commingday">
                             <p>즉시 입주</p>
                             </label>
-                            <label class="in_date"><input type="radio" name="datetime">
+                            <label class="in_date"><input type="radio" name="commingday">
                             <p>날짜 협의</p>
                             </label>
-                            <label class="in_date"><input type="radio" id="cal" name="datetime">
+                            <label class="in_date"><input type="radio" id="cal" name="commingday">
                             <p>날짜 선택</p>
                             </label>
                             <input type="text" id="datepicker" readonly />
@@ -268,12 +277,13 @@
                 <tr>
                     <th rowspan="2">관리비</th>
                     <td class="add_info" colspan="3">
-                        <input type="text" id="main_pr_v1" name="main_pr_v1" disabled="" class="add2 input_box">
+                        <input type="text" id="main_pr_v1" name="fee" disabled="" class="add2 input_box">
                         <p class="add3">만원</p>
                         <div class="main">
-                        <label class="add_check_box" size="22"><input type="checkbox" id="main_input" name="main_input" value="main_input" class="PcMeW" checked="">
-                        <span class="CheckBox"></span>
-                        <span class="add_text">관리비 없음</span>
+                        <label class="add_check_box" size="22">
+                        	<input type="checkbox" id="main_input" name="main_input" value="main_input" class="PcMeW" checked="">
+                        	<span class="CheckBox"></span>
+                        	<span class="add_text">관리비 없음</span>
                         </label>
                         </div>
                     </td>
@@ -284,32 +294,32 @@
                             <p>관리비항목</p>
                             <p>(다중선택가능)</p>
                         </div>
-                        <label class="ma_box  ma_m">
-                            <input type="checkbox" id="user_input" name="user_input" value="user_input" >
+                        <label class="ma_box ma_m">
+                            <input type="checkbox" id="user_input" name="fee_item" value="fee_item" >
                             <p>인터넷</p>
                         </label>
-                        <label class="ma_box  ma_m">
-                            <input type="checkbox" id="user_input" name="user_input" value="user_input" >
+                        <label class="ma_box ma_m">
+                            <input type="checkbox" id="user_input" name="fee_item" value="fee_item" >
                             <p>유선TV</p>
                         </label>
-                        <label class="ma_box  ma_m">
-                            <input type="checkbox" id="user_input" name="user_input" value="user_input" >
+                        <label class="ma_box ma_m">
+                            <input type="checkbox" id="user_input" name="fee_item" value="fee_item" >
                             <p>청소비</p>
                         </label>
-                        <label class="ma_box  ma_m">
-                            <input type="checkbox" id="user_input" name="user_input" value="user_input" >
+                        <label class="ma_box ma_m">
+                            <input type="checkbox" id="user_input" name="fee_item" value="fee_item" >
                             <p>수도세</p>
                         </label>
-                        <label class="ma_box  ma_m">
-                            <input type="checkbox" id="user_input" name="user_input" value="user_input" >
+                        <label class="ma_box ma_m">
+                            <input type="checkbox" id="user_input" name="fee_item" value="fee_item" >
                             <p>도시가스</p>
                         </label>
-                        <label class="ma_box  ma_m">
-                            <input type="checkbox" id="user_input" name="user_input" value="user_input" >
+                        <label class="ma_box ma_m">
+                            <input type="checkbox" id="user_input" name="fee_item" value="fee_item" >
                             <p>전기세</p>
                         </label>
-                        <label class="ma_box  ma_m">
-                            <input type="checkbox" id="user_input" name="user_input" value="user_input" >
+                        <label class="ma_box ma_m">
+                            <input type="checkbox" id="user_input" name="fee_item" value="fee_item" >
                             <p>기타</p>
                         </label>
                     </td>
@@ -318,22 +328,22 @@
                     <th>주차여부</th>
                     <td class="add_info">
                         <label class="add1 Square_box">
-                            <input type="radio" name="parking" checked="" onclick="btnn1_off();">
+                            <input type="radio" name="parking" value="-1" checked onclick="btnn1_off();">
                             <p>불가능</p>
                         </label>
                         <label class="add1 Square_box">
-                            <input type="radio" name="parking" onclick="btnn1_on();">
+                            <input type="radio" name="parking" value="0" onclick="btnn1_on();">
                             <p>가능</p>
                         </label>
-                        <input type="text" id="btnn1" class="add2 input_box" name="parking_cost" disabled="" value="">
+                        <input type="text" id="btnn1" class="add2 input_box" name="parking" disabled="" value="">
                         <p class="add3">만원</p>
                     </td>
                     <th>반려동물</th>
                     <td class="add_info">
-                        <label class="add1 Square_box"><input type="radio" name="pet" checked="">
+                        <label class="add1 Square_box"><input type="radio" name="pet" value="0" checked="">
                             <p>가능</p>
                         </label>
-                        <label class="add1 Square_box"><input type="radio" name="pet">
+                        <label class="add1 Square_box"><input type="radio" name="pet" value="1">
                             <p>불가능</p>
                         </label>
                     </td>
@@ -341,19 +351,19 @@
                 <tr>
                     <th>엘리베이터</th>
                     <td class="add_info">
-                        <label class="add1 Square_box"><input type="radio" name="elevator" checked="">
+                        <label class="add1 Square_box"><input type="radio" name="elevator" value="0" checked="">
                             <p>없음</p>
                         </label>
-                        <label class="add1 Square_box"><input type="radio" name="elevator">
+                        <label class="add1 Square_box"><input type="radio" name="elevator" value="1">
                             <p>있음</p>
                         </label>
                     </td>
                     <th>베란다/발코니</th>
                     <td class="add_info">
-                        <label class="add1 Square_box"><input type="radio" name="balcony" checked="">
+                        <label class="add1 Square_box"><input type="radio" name="veranda" value="0" checked="">
                             <p>없음</p>
                         </label>
-                        <label class="add1 Square_box"><input type="radio" name="balcony">
+                        <label class="add1 Square_box"><input type="radio" name="veranda" value="1">
                             <p>있음</p>
                         </label>
                     </td>
@@ -361,10 +371,10 @@
                 <tr>
                     <th>빌트인</th>
                     <td class="add_info" colspan="1">
-                        <label class="add1 Square_box"><input type="radio" name="built_in" checked="">
+                        <label class="add1 Square_box"><input type="radio" name="builtin" value="0" checked="">
                             <p>없음</p>
                         </label>
-                        <label class="add1 Square_box"><input type="radio" name="built_in">
+                        <label class="add1 Square_box"><input type="radio" name="builtin" value="1">
                             <p>있음</p>
                         </label>
                     </td>
@@ -373,55 +383,55 @@
                     <th>옵션항목</th>
                     <td class="add_info" colspan="3">
                         <label class="ma_box ma_m">
-                            <input type="checkbox" name="room_options">
+                            <input type="checkbox" name="optionitem">
                             <p>에어컨</p>
                         </label>
                         <label class="ma_box ma_m">
-                            <input type="checkbox" name="room_options">
+                            <input type="checkbox" name="optionitem">
                             <p>세탁기</p>
                         </label>
                         <label class="ma_box ma_m">
-                            <input type="checkbox" name="room_options">
+                            <input type="checkbox" name="optionitem">
                             <p>침대</p>
                         </label>
                         <label class="ma_box ma_m">
-                            <input type="checkbox" name="room_options">
+                            <input type="checkbox" name="optionitem">
                             <p>책상</p>
                         </label>
                         <label class="ma_box ma_m">
-                            <input type="checkbox" name="room_options">
+                            <input type="checkbox" name="optionitem">
                             <p>옷장</p>
                         </label>
                         <label class="ma_box ma_m">
-                            <input type="checkbox" name="room_options">
+                            <input type="checkbox" name="optionitem">
                             <p>TV</p>
                         </label>
                         <label class="ma_box ma_m">
-                            <input type="checkbox" name="room_options">
+                            <input type="checkbox" name="optionitem">
                             <p>신발장</p>
                         </label>
                         <label class="ma_box ma_m">
-                            <input type="checkbox" name="room_options">
+                            <input type="checkbox" name="optionitem">
                             <p>냉장고</p>
                         </label>
                         <label class="ma_box ma_m">
-                            <input type="checkbox" name="room_options">
+                            <input type="checkbox" name="optionitem">
                             <p>가스레인지</p>
                         </label>
                         <label class="ma_box ma_m">
-                            <input type="checkbox" name="room_options">
+                            <input type="checkbox" name="optionitem">
                             <p>인덕션</p>
                         </label>
                         <label class="ma_box ma_m">
-                            <input type="checkbox" name="room_options">
+                            <input type="checkbox" name="optionitem">
                             <p>전자레인지</p>
                         </label>
                         <label class="ma_box ma_m">
-                            <input type="checkbox" name="room_options">
+                            <input type="checkbox" name="optionitem">
                             <p>전자도어락</p>
                         </label>
                         <label class="ma_box ma_m">
-                            <input type="checkbox" name="room_options">
+                            <input type="checkbox" name="optionitem">
                             <p>비데</p>
                         </label>
                     </td>
@@ -429,10 +439,10 @@
                 <tr>
                     <th>전세자금대출</th>
                     <td class="add_info" colspan="3">
-                        <label class="add1 Square_box"><input type="radio" name="loan" checked="">
+                        <label class="add1 Square_box"><input type="radio" name="loan" value="0" checked="">
                             <p>불가능</p>
                         </label>
-                        <label class="add1 Square_box"><input type="radio" name="loan">
+                        <label class="add1 Square_box"><input type="radio" name="loan" value="1">
                             <p>가능</p>
                         </label>
                     </td>
@@ -452,7 +462,7 @@
                 <tr>
                     <th>상세 설명</th>
                     <td class="detail_box">
-                        <textarea class="detail_des" style="resize: none;" name="memo" placeholder="
+                        <textarea class="detail_des" style="resize: none;" name="content" placeholder="
 
  ※상세설명 작성 주의사항
                                 
@@ -502,9 +512,11 @@
                 <span class="low_text1">매물관리규정을 확인하였으며, 입력한 정보는 실제 매물과 다름이 없습니다.</span>
             </label>
             <button type="button" class="low_btn1" onclick="location.href='${pageContext.request.contextPath}/host/rmli.do'">취소</button>
-            <button type="button" class="low_btn2" onclick="location.href='${pageContext.request.contextPath}/host/rmli.do'">매물등록</button>
+            <button type="submit" class="low_btn2" >매물등록</button>
         </div>
+    </form>
 </div><!-- content끝 -->
+
 
 <!-- footer 시작 -->
     <!-- 하단 영역 -->
@@ -543,7 +555,7 @@
             new daum.Postcode({
                 oncomplete: function(data) {
                     var addr = data.address; // 최종 주소 변수
-    
+                    
                 // 주소 정보를 해당 필드에 넣는다.
                 <!--document.getElementById("sample5_address").value = addr;-->
                 document.getElementById("point_address").value = addr;
@@ -556,6 +568,11 @@
     
                         // 해당 주소에 대한 좌표를 받아서
                         var coords = new daum.maps.LatLng(result.y, result.x);
+                        
+						<%-- x좌표와 y좌표의 값을 넣어준다 --%>
+                        document.getElementById("longitude").value = new daum.maps.LatLng.result.x;
+                        document.getElementById("latitude").value = new daum.maps.LatLng.result.y;
+                        
                         // 기존에 있던 박스를 숨긴다.
                         $("#pon_box").css("display", "none")
                         // 지도를 보여준다.
@@ -689,19 +706,20 @@ $(function() {
     $(function() {
         // 월세 버튼
         $(document).on("click", ".deal_btn", function() {
-            var ad = '<div class="d_div"><p class="bbtn">월세</p><input class="d_input_box1 d_input_box2" type="text" name="보증금"><p class="midle_box">/</p><input class="d_input_box1 d_input_box2" type="text" name="월세"><p class="dp_text">만원<span>(예 월세 1000만원/50만원)</span><span class="glyphicon glyphicon-remove pp"></span></p></div>';
+            var ad = '<div class="d_div"><p class="bbtn">월세</p><input type="hidden" name="dealingtype" value="월세"><input class="d_input_box1 d_input_box2" type="text" name="deposit"><p class="midle_box">/</p>'
+            + '<input class="d_input_box1 d_input_box2" type="text" name="price"><p class="dp_text">만원<span>(예 월세 1000만원/50만원)</span><span class="glyphicon glyphicon-remove pp"></span></p></div>';
             $(".deal77").append(ad);
         });
 
         // 전세 버튼
         $(document).on("click", ".deal_btn1", function() {
-            var bc = '<div class="d_div1"><p class="bbtn">전세</p><input class="d_input_box1 d_input_box2" type="text" name="전세"><p class="dp_text">만원<span>(예 전세 2000만원)</span><span class="glyphicon glyphicon-remove pp1"></span></p></div>';
+            var bc = '<div class="d_div1"><p class="bbtn">전세</p><input type="hidden" name="dealingtype" value="전세"><input class="d_input_box1 d_input_box2" type="text" name="price"><p class="dp_text">만원<span>(예 전세 2000만원)</span><span class="glyphicon glyphicon-remove pp1"></span></p></div>';
             $(".deal77").append(bc);
             $(".deal_btn1").attr("disabled", true);
         });
         // 매매 버튼
         $(document).on("click", ".deal_btn2", function() {
-            var cd = '<div class="d_div2"><p class="bbtn">매매</p><input class="d_input_box1 d_input_box2" type="text" name="전세"><p class="dp_text">만원<span>(예 매매 10000만원)</span><span class="glyphicon glyphicon-remove pp2"></span></p></div>';
+            var cd = '<div class="d_div2"><p class="bbtn">매매</p><input type="hidden" name="dealingtype" value="매매"><input class="d_input_box1 d_input_box2" type="text" name="price"><p class="dp_text">만원<span>(예 매매 10000만원)</span><span class="glyphicon glyphicon-remove pp2"></span></p></div>';
             $(".deal77").append(cd);
             $(".deal_btn2").attr("disabled", true);
         });

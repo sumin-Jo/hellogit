@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AddressMapper">
+
+    <!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+    <resultMap id="addressMap"
+        type="project.star.b2.model.Address">
+        <!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다. -->
+        <result property="no" column="no" />
+        <result property="address_name" column="address_name" />
+        <result property="region_2depth_name" column="region_2depth_name" />
+        <result property="region_3depth_name" column="region_3depth_name" />
+        <result property="x" column="x" />
+        <result property="y" column="y" />
+    </resultMap>
+
+    <!-- 단일행 조회를 위한 기능 정의 -->
+    <select id="selectItem"
+        parameterType="project.star.b2.model.Address"
+        resultMap="addressMap">
+        SELECT no, address_name, region_2depth_name, region_3depth_name, x, y FROM address WHERE no=#{no};
+    </select>
+
+    <!-- 다중행 조회를 위한 기능 정의 -->
+    <select id="selectList"
+        parameterType="project.star.b2.model.Address"
+        resultMap="addressMap">
+        SELECT no, address_name, region_2depth_name, region_3depth_name, x, y FROM address
+        
+        <where>
+            <if test="address_name != null and address_name != ''">
+                address_name LIKE concat('%', #{address_name}, '%')
+            </if>
+
+        </where>
+        
+        ORDER BY no ASC
+        
+        <if test="listCount > 0">
+            LIMIT #{offset}, #{listCount}
+        </if>
+    </select>
+
+    <!-- 데이터 저장을 위한 기능 정의 -->
+    <insert id="insertItem"
+        parameterType="project.star.b2.model.Address"
+        useGeneratedKeys="true"
+        keyProperty="no">
+        INSERT INTO address (address_name, region_2depth_name, region_3depth_name, x, y) 
+        VALUES (#{address_name}, #{region_2depth_name}, #{region_3depth_name}, #{x}, #{y});
+    </insert>
+
+    <!-- 데이터 삭제를 위한 기능 정의 -->
+    <delete id="deleteItem"
+        parameterType="project.star.b2.model.Address">
+        DELETE FROM address WHERE no=#{no};
+    </delete>
+
+    <!-- 데이터 갱신을 위한 기능 정의 -->
+    <update id="updateItem"
+        parameterType="project.star.b2.model.Address">
+        UPDATE address SET name=#{name}, email=#{email}, passwd=#{passwd}, tel=#{tel}, profile_img=#{profile_img}
+        WHERE no=#{no};
+    </update>
+    
+    <!--
+        조건에 맞는 데이터 수를 집계하여 int 타입으로 반환한다.
+        count, max, min, sum, avg 함수를 사용한 경우 Mapper에서는
+        resultMap이 아닌 resultType으로 반환한다.
+    -->
+    <select id="selectCountAll" 
+            parameterType="project.star.b2.model.Address"
+            resultType="int">
+        SELECT COUNT(*) FROM address
+        
+        <where>
+            <if test="name != null and name != ''">
+                name LIKE concat('%', #{name}, '%')
+            </if>
+            
+            <if test="email != null and email != ''">
+                OR email LIKE concat('%', #{email}, '%')
+            </if>
+        </where>
+    </select>
+
+</mapper>

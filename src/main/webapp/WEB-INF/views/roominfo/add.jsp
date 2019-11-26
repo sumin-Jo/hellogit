@@ -64,7 +64,7 @@
 			<input type="text" name="region_3depth_name" id="region_3depth_name" />
 		</div>
 		<div>
-			<label for="userno">회원정보: </label>
+			<label for="user_no">회원정보: </label>
 			<input type="text" name="userno" id="userno" />
 		</div>
 		<div>

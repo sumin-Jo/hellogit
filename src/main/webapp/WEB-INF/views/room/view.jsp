@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>방정보</h1>
+	<h1>방정보 확인</h1>
+	<p>방번호: ${output.roomno}</p>
 	<p>방타입: ${output.roomtype}</p>
 	<p>방이름: ${output.title}</p>
 	<p>층수: ${output.floor}</p>
@@ -23,11 +24,12 @@
 	<p>경도: ${output.longitude}</p>
 	<p>2뎁스 (구): ${output.region_2depth_name}</p>
 	<p>3뎁스 (동): ${output.region_3depth_name}</p>
-	<p>회원번호: ${output.user_no}</p>
+	<p>회원번호: ${output.userno}</p>
+	
 	<hr />	
 	<a href="${pageContext.request.contextPath}/room/list.do">[목록보기]</a>
-	<a href="${pageContext.request.contextPath}/room/add.do">[방추가]</a>
-	<a href="${pageContext.request.contextPath}/room/edit.do?no=${output.no}">[방수정]</a>
-	<a href="${pageContext.request.contextPath}/room/delete_ok.do?no=${output.no}">[방삭제]</a>
+	<a href="${pageContext.request.contextPath}/room/add.do">[방정보추가]</a>
+	<a href="${pageContext.request.contextPath}/room/edit.do?roomno=${output.roomno}">[방정보수정]</a>
+	<a href="${pageContext.request.contextPath}/room/delete_ok.do?roomno=${output.roomno}">[방정보삭제]</a>
 </body>
 </html>

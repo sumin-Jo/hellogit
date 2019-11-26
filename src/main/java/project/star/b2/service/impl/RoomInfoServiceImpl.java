@@ -1,10 +1,13 @@
 package project.star.b2.service.impl;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
+import project.star.b2.model.Room;
 import project.star.b2.model.RoomInfo;
 import project.star.b2.service.RoomInfoService;
 
@@ -19,9 +22,40 @@ public class RoomInfoServiceImpl implements RoomInfoService {
     // --> import org.apache.ibatis.session.SqlSession
 	@Autowired
     SqlSession sqlSession;
+
+
+	@Override
+	public List<Room> getRoomInfoList(Room input) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
-    /**
-     * 학과 데이터 등록하기
+	@Override
+	public RoomInfo getRoomInfoItem(RoomInfo input) throws Exception {
+		
+		RoomInfo result1 = null;
+		RoomInfo result2 = null;
+
+        try {
+        	result1 = sqlSession.selectOne("RoomMapper.selectItem", input);
+            result2 = sqlSession.selectOne("InfoMapper.selectItem", input);
+
+            if (result1 == null || result2 == null) {
+                throw new NullPointerException("result=null");
+            }
+        } catch (NullPointerException e) {
+            log.error(e.getLocalizedMessage());
+            throw new Exception("조회된 데이터가 없습니다.");
+        } catch (Exception e) {
+            log.error(e.getLocalizedMessage());
+            throw new Exception("데이터 조회에 실패했습니다.");
+        }
+
+        return result1;
+	}
+
+	/**
+     * 데이터 등록하기
      * @param Room 저장할 정보를 담고 있는 Beans
      * @throws Exception
      */
@@ -32,7 +66,7 @@ public class RoomInfoServiceImpl implements RoomInfoService {
 
         try {
             result1 = sqlSession.insert("RoomMapper.insertItem", input);
-            
+            // room 데이터가 들어가고나서 info PRI키가 되는 Room_no를 넣어준다.
             input.setRoomno(input.getRoomno());
             
             result2 = sqlSession.insert("InfoMapper.insertItem", input);
@@ -51,4 +85,29 @@ public class RoomInfoServiceImpl implements RoomInfoService {
 
         return (result1+result2)/2;
     }
+    
+    
+    
+    
+    
+    
+    @Override
+	public int getRoomInfoCount(Room input) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	@Override
+	public int editRoomInfo(Room input) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteRoomInfo(Room input) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
 }

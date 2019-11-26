@@ -142,16 +142,16 @@ public class InfoController {
 		/** 1) 사용자가 입력한 파라미터 수신 및 유효성 검사 */
 		// 저장할 값들을 Beans에 담는다.
 		int feeitem = webHelper.getInt("feeitem");
-		int parking = webHelper.getInt("parking");
-		int pet = webHelper.getInt("pet");
-		int elevator = webHelper.getInt("elevator");
-		int veranda = webHelper.getInt("veranda");
-		int builtin = webHelper.getInt("builtin");
+		String parking = webHelper.getString("parking");
+		String pet = webHelper.getString("pet");
+		String elevator = webHelper.getString("elevator");
+		String veranda = webHelper.getString("veranda");
+		String builtin = webHelper.getString("builtin");
 		int optionitem = webHelper.getInt("optionitem");
-		int loan = webHelper.getInt("loan");
+		String loan = webHelper.getString("loan");
 		int supplyarea = webHelper.getInt("supplyarea");
 		int maxfloor = webHelper.getInt("maxfloor");
-		int heater = webHelper.getInt("heater");
+		String heater = webHelper.getString("heater");
 		String commingday = webHelper.getString("commingday");
 		String buildtype = webHelper.getString("buildtype");
 		String content = webHelper.getString("content");
@@ -241,16 +241,16 @@ public class InfoController {
 		
 		/** 1) 사용자가 입력한 파라미터 수신 및 유효성 검사 */
 		int feeitem = webHelper.getInt("feeitem");
-		int parking = webHelper.getInt("parking");
-		int pet = webHelper.getInt("pet");
-		int elevator = webHelper.getInt("elevator");
-		int veranda = webHelper.getInt("veranda");
-		int builtin = webHelper.getInt("builtin");
+		String parking = webHelper.getString("parking");
+		String pet = webHelper.getString("pet");
+		String elevator = webHelper.getString("elevator");
+		String veranda = webHelper.getString("veranda");
+		String builtin = webHelper.getString("builtin");
 		int optionitem = webHelper.getInt("optionitem");
-		int loan = webHelper.getInt("loan");
+		String loan = webHelper.getString("loan");
 		int supplyarea = webHelper.getInt("supplyarea");
 		int maxfloor = webHelper.getInt("maxfloor");
-		int heater = webHelper.getInt("heater");
+		String heater = webHelper.getString("heater");
 		String commingday = webHelper.getString("commingday");
 		String buildtype = webHelper.getString("buildtype");
 		String content = webHelper.getString("content");
@@ -305,7 +305,7 @@ public class InfoController {
 	
 	// 이 값이 존재하지 않는다면 데이터 조회가 불가능하므로 반드시 필수값으로 처리해야 한다.
 	if (roomno == 0 ) {
-		return webHelper.redirect(null, "방정보 번호(roomno)가 없습니다.");
+		return webHelper.redirect(null, "방정보 번호(room_no)가 없습니다.");
 	}
 	
 	/** 2) 데이터 삭제하기 */

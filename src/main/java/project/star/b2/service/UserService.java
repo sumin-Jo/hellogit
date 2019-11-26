@@ -2,7 +2,6 @@ package project.star.b2.service;
 
 import java.util.List;
 
-import project.star.b2.model.Room;
 import project.star.b2.model.User;
 
 
@@ -50,6 +49,5 @@ public interface UserService {
      * @throws Exception
      */
     public int deleteUser(User input) throws Exception;
-
     
 }

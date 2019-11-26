@@ -2,7 +2,7 @@
 
 /** hheader */
 /** 모델창 위치 */
-.modaltopagree {
+.modaltop {
 	width: 600px;
 	background-color: white;
 	z-index: 1001;
@@ -165,7 +165,6 @@ li.li3, li.li5 {
     padding: 15px 0px 15px 15px;
     white-space: nomal;
 	overflow-y: scroll;
-	margin-top: 34px;
 }
 
 /** 닫는 버튼 동그라미로 */
@@ -268,10 +267,9 @@ width: 100%;
 .stary .p {
 	display: inline-black;
 	width: 300px;
-    margin-top: 16px;
-    font-size: 15px;
-    margin-bottom: 10px;
-    position: absolute;
+	margin-top: 10px;
+	font-size: 15px;
+	margin-bottom: 10px;
 }
 
 /** 버튼 이미지 */
@@ -317,92 +315,17 @@ width: 100%;
 	margin-right: 10px; 
 }
 
-/* 체크박스 스타일 */
-.nocklabel {
-    width: 40px;
-    height: 25px;
-    display: inline-block;
-    padding-left: 510px;
-    position: absolute;
-}
-
-/** 맨 마지막 버튼만 */
-.nocklabelall {
-    width: 40px;
-    height: 25px;
-    display: inline-block;
-    padding-left: 3px;
-    position: absolute;
-    margin-top: -16px;
-}
-
-.nocklabel input[type="checkbox"] {
-    width: 1px; height: 1px;
-    opacity: 0;
-    position: absolute;
-    top: 0; left: 0;
-}
-
-.nocklabel input[type="checkbox"] + .checkbox {
-    float: left;
-    width: 25px; 
-    height: 25px;
-    background-color: #ffffff;
-    position: absolute;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-}
-
-/* 체크박스 스타일 - checked */
-.nocklabel input[type="checkbox"]:checked + .checkbox {
-    background-color: #006cff;
-    border: 1px solid #006cff;
-    width: 25px;
-    height: 25px;
-}
-
-.nocklabel input[type="checkbox"]:checked + .checkbox::after {
-    content: "";
-    display: block;
-    width: 47%;
-    height: 27%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    transform-origin: 30% 35%;
-    border-left: 2px solid rgb(255, 255, 255);
-    border-bottom: 2px solid rgb(255, 255, 255);
-}
-
-.nocklabel input[type="checkbox"] + .checkbox::after {
-    content: "";
-    display: block;
-    width: 47%;
-    height: 27%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    transform-origin: 30% 35%;
-    border-left: 2px solid #999;
-    border-bottom: 2px solid #999;
-}
-
 /** 언뉘님 */
 .recent-div8.off{ background: url(../../img/ma_img/greycheck.png) center center / cover; width: 36px;
     height: 32px; }
 .recent-div8.on{ background: url(../../img/ma_img/bluecheck.png) center center / cover; width: 36px;
     height: 32px;}
-.recent-div8.onn{ background: url(../../img/ma_img/bluecheck.png) center center / cover; }
 
 .recent-div82.off{ background: url(../../img/ma_img/greycheck.png) center center / cover; }
 .recent-div82.on{ background: url(../../img/ma_img/bluecheck.png) center center / cover; }
-.recent-div82.onn{ background: url(../../img/ma_img/bluecheck.png) center center / cover; }
 
 .recent-div83.off{ background: url(../../img/ma_img/greycheck.png) center center / cover; }
 .recent-div83.on{ background: url(../../img/ma_img/bluecheck.png) center center / cover; }
-.recent-div83.onn{ background: url(../../img/ma_img/bluecheck.png) center center / cover; }
 
 .recent-div84.off{ background: url(../../img/ma_img/greycheck.png) center center / cover; }
 .recent-div84.on{ background: url(../../img/ma_img/bluecheck.png) center center / cover; }
@@ -440,8 +363,7 @@ width: 100%;
 
 /* <div>좋아요 자식박스 -absolute */
 .recent-div7{
-    width: 40px;
-    height: 36px;
+    width: 36px;
     position: absolute;
     top: 3px;
     right: 7px;

@@ -15,6 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 @Slf4j
 public class RetrofitHelper {
+
     /**
      * Retrofit 객체를 생성하고 기본 설정들을 적용한 후 리턴한다. Retrofit은 OkHttpClient라는 통신 객체가 수신한 결과를
      * 다른 클래스와 연동하여 제어하는 기능을 한다. 여기서는 Gson 객체와 연계하여 통신 결과로 수신된 JSON 데이터를 Beans 객체로

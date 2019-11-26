@@ -9,8 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>방 관리</h1>
-	<a href="${pageContext.request.contextPath}/room/add.do">[유저추가]</a>
+
+	<h1>방 관리[room table]</h1>
+	<a href="${pageContext.request.contextPath}/room/add.do">[방추가]</a>
 	
 	<!-- 검색폼 -->
 	<form method="get" action="${pageContext.request.contextPath}/room/list.do">
@@ -27,7 +28,7 @@
 			<tr>
 				<th width="100" align="center">방번호</th>
 				<th width="100" align="center">방종류</th>
-				<th width="100" align="center">방이름</th>
+				<th width="100" align="center">title</th>
 				<th width="100" align="center">층수</th>
 				<th width="100" align="center">면적</th>
 				<th width="100" align="center">관리비</th>
@@ -86,15 +87,15 @@
 
 						<%-- 상세페이지로 이동하기 위한 URL --%>
 						<c:url value="/room/view.do" var="viewUrl">
-							<c:param name="no" value="${item.roomno}" />
+							<c:param name="roomno" value="${item.roomno}" />
 						</c:url>
 
 						<tr>
 							<td align="center">${item.roomno}</td>
+							<td align="center">${roomtype}</td>
 							<td align="center"><a href="${viewUrl}">${title}</a></td>
 							<td align="center">${floor}</td>
 							<td align="center">${area}</td>
-							<td align="center">${tel}</td>
 							<td align="center">${fee}</td>
 							<td align="center">${confirmdate}</td>
 							<td align="center">${address}</td>

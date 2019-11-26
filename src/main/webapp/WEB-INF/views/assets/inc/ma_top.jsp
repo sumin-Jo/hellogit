@@ -93,6 +93,10 @@
 			<a href="${pageContext.request.contextPath}/room/list.do"> room db</a>
 			<span>&nbsp | &nbsp </span>
 			<a href="${pageContext.request.contextPath}/info/list.do"> info db</a>
+			<span>&nbsp | &nbsp </span>
+			<a href="${pageContext.request.contextPath}/roominfo/list.do"> roominfo db</a>
+			<span>&nbsp | &nbsp </span>
+			<a href="${pageContext.request.contextPath}/price/list.do"> price db</a>
 		</div>
 		<!-- 메뉴 항목 -->
 		<div class="pull-right">

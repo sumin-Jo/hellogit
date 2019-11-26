@@ -64,8 +64,8 @@
 			<input type="text" name="region_3depth_name" id="region_3depth_name" />
 		</div>
 		<div>
-			<label for="user_no">회원정보: </label>
-			<input type="text" name="user_no" id="user_no" />
+			<label for="userno">회원정보: </label>
+			<input type="text" name="userno" id="userno" />
 		</div>
 		<hr />
 		<button type="submit">저장하기</button>

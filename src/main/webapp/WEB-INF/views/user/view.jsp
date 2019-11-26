@@ -10,18 +10,18 @@
 </head>
 <body>
 	<h1>회원정보</h1>
-	<p>회원번호: ${output.no}</p>
+	<p>회원번호: ${output.userno}</p>
 	<p>회원이름: ${output.name}</p>
 	<p>이메일: ${output.email}</p>
 	<p>비밀번호: ${output.passwd}</p>
 	<p>전화번호: ${output.tel}</p>
 	<p>등록날짜: ${output.regdate}</p>
 	<p>수정날짜: ${output.editdate}</p>
-	<p>: ${output.profile_img}</p>
+	<p>프로필이미지: ${output.profile_img}</p>
 	<hr />	
 	<a href="${pageContext.request.contextPath}/user/list.do">[목록보기]</a>
 	<a href="${pageContext.request.contextPath}/user/add.do">[회원추가]</a>
-	<a href="${pageContext.request.contextPath}/user/edit.do?no=${output.no}">[회원수정]</a>
-	<a href="${pageContext.request.contextPath}/user/delete_ok.do?no=${output.no}">[회원삭제]</a>
+	<a href="${pageContext.request.contextPath}/user/edit.do?userno=${output.userno}">[회원수정]</a>
+	<a href="${pageContext.request.contextPath}/user/delete_ok.do?userno=${output.userno}">[회원삭제]</a>
 </body>
 </html>

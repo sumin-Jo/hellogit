@@ -161,7 +161,6 @@ public class UserController {
 		String passwd = webHelper.getString("passwd");
 		String tel = webHelper.getString("tel");
 		String regdate = webHelper.getString("regdate");
-		String editdate = webHelper.getString("editdate");
 		String profile_img = webHelper.getString("profile_img");
 		
 		// 학과 이름은 필수 항목이므로 입력여부를 검사
@@ -183,7 +182,6 @@ public class UserController {
 		input.setPasswd(passwd);
 		input.setTel(tel);
 		input.setRegdate(regdate);
-		input.setEditdate(editdate);
 		input.setProfile_img(profile_img);
 		
 		
@@ -199,7 +197,7 @@ public class UserController {
 		
 		/** 3) 결과를 확인하기 위한 페이지 이동 */
 		// 저장 결과를 확인하기 위해서 데이터 저장시 생성된 PK값을 상세 페이지로 전달해야 한다.
-		String redirectUrl = contextPath + "/user/view.do?no="+ input.getUserno();
+		String redirectUrl = contextPath + "/user/view.do?userno="+ input.getUserno();
 		
 		return webHelper.redirect(redirectUrl, "저장되었습니다."); 
 	}
@@ -290,7 +288,7 @@ public class UserController {
 		
 		/** 3) 결과를 확인하기 위한 페이지 이동 */
 		// 저장 결과를 확인하기 위해서 데이터 저장시 생성된 PK값을 상세 페이지로 전달해야 한다.
-		String redirectUrl = contextPath + "/user/view.do?no=" + input.getUserno();
+		String redirectUrl = contextPath + "/user/view.do?userno=" + input.getUserno();
 		return webHelper.redirect(redirectUrl, "수정되었습니다."); 
 		
 		}

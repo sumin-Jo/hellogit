@@ -32,7 +32,7 @@
 			<input type="text" name="regdate" id="regdate" />
 		</div>
 		<div>
-			<label for="editdate">수정날짜: </label>
+			<label for="editdate">등록날짜: </label>
 			<input type="text" name="editdate" id="editdate" />
 		</div>
 		<div>

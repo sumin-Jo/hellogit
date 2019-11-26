@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	
 	<h1>슈퍼 방 관리</h1>
 	<a href="${pageContext.request.contextPath}/roominfo/add.do">[슈퍼 방 추가]</a>
 	
@@ -66,7 +67,7 @@
 				<%-- 조회결과가 없는 경우 --%>
 				<c:when test="${output == null || fn:length(output) == 0}">
 					<tr>
-						<td colspan="29" align="center">조회결과가 없습니다.</td>
+						<td colspan="30" align="center">조회결과가 없습니다.</td>
 					</tr>
 				</c:when>
 				<%-- 조회 결과가 있는 경우 --%>
@@ -89,7 +90,7 @@
 						<c:set var="longitude" value="${item.longitude}" />
 						<c:set var="region_2depth_name" value="${item.region_2depth_name}" />
 						<c:set var="region_3depth_name" value="${item.region_3depth_name}" />
-						<c:set var="user_no" value="${item.user_no}" />
+						<c:set var="userno" value="${item.userno}" />
 						
 						<%-- info --%>
 						<c:set var="feeitem" value="${item.feeitem}" />
@@ -121,12 +122,12 @@
 
 						<%-- 상세페이지로 이동하기 위한 URL --%>
 						<c:url value="/roominfo/view.do" var="viewUrl">
-							<c:param name="no" value="${item.no}" />
+							<c:param name="roomno" value="${item.roomno}" />
 						</c:url>
 
 						<tr>
 							<%-- room --%>
-							<td align="center">${item.no}</td>
+							<td align="center">${roomno}</td>
 							<td align="center"><a href="${viewUrl}">${title}</a></td>
 							<td align="center">${floor}</td>
 							<td align="center">${area}</td>
@@ -140,10 +141,10 @@
 							<td align="center">${longitude}</td>
 							<td align="center">${region_2depth_name}</td>
 							<td align="center">${region_3depth_name}</td>
-							<td align="center">${user_no}</td>	
+							<td align="center">${userno}</td>	
 							
 							<%-- info --%>
-							<td align="center">${item.feeitem}</td>
+							<td align="center">${feeitem}</td>
 							<td align="center">${parking}</td>
 							<td align="center">${pet}</td>
 							<td align="center">${elevator}</td>

@@ -9,11 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>학과수정</h1>
+	<h1>유저수정</h1>
 	
 	<form method="post" action="${pageContext.request.contextPath}/user/edit_ok.do">
 	<%-- action 페이지에서 사용할 WHERE 조건값을 hidden필드로 숨겨서 전송한다. --%>
-		<input type="hidden" name="no" value="${output.no}" />
+		<input type="text" name="userno" value="${output.userno}" />
 		
 		<div>
 			<label for="name">회원이름: </label>
@@ -36,7 +36,7 @@
 			<input type="text" name="regdate" id="regdate" value="${output.regdate}" />
 		</div>
 		<div>
-			<label for="editdate">수정날짜: </label>
+			<label for="editdate">등록날짜: </label>
 			<input type="text" name="editdate" id="editdate" value="${output.editdate}" />
 		</div>
 		<div>

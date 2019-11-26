@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>정보관리</h1>
+	<h1>방정보관리[info table]</h1>
 	<a href="${pageContext.request.contextPath}/info/add.do">[정보추가]</a>
 	
 	<!-- 검색폼 -->
@@ -71,7 +71,7 @@
 						<c:set var="commingday" value="${item.commingday}" />
 						<c:set var="buildtype" value="${item.buildtype}" />
 						<c:set var="content" value="${item.content}" />
-						<c:set var="room_no" value="${item.room_no}" />
+						<c:set var="roomno" value="${item.roomno}" />
 
 
 
@@ -88,7 +88,7 @@
 
 						<%-- 상세페이지로 이동하기 위한 URL --%>
 						<c:url value="/info/view.do" var="viewUrl">
-							<c:param name="room_no" value="${item.room_no}" />
+							<c:param name="roomno" value="${item.roomno}" />
 						</c:url>
 
 						<tr>
@@ -106,7 +106,7 @@
 							<td align="center">${commingday}</td>
 							<td align="center">${buildtype}</td>
 							<td align="center">${content}</td>
-							<td align="center">${room_no}</td>
+							<td align="center">${roomno}</td>
 						</tr>
 					</c:forEach>
 				</c:otherwise>

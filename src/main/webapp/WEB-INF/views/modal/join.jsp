@@ -8,7 +8,6 @@
 
     <!-- sweetalert --> 
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/plugin/sweetalert/sweetalert2.css" />
-	<script src="${pageContext.request.contextPath}/assets/plugin/sweetalert/sweetalert2.all.min.js"></script>
 
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-1.10.2.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"></script>
@@ -49,36 +48,8 @@
 			swal("회원가입이 완료되었습니다");
 		});  -->
 
-
-<script type="text/javascript">
-        $(function() {
-        	$("#buttonjoin").click(function() {
-	        	var buttonjoin = document.getElementById('buttonjoin');
-    	        if ($('#name').val() == null ) {
-    	        	alert("이름을 입력해 주세요");
-        	    	//swal("필수 항목을 체크해 주세요");
-    	        }else if ($('#email').val() ==  null ) {
-        	        alert("이메일을 입력해 주세요");
-                }else if ($('input[name=test_name]').val() ==  null ) {
-        	        alert("이메일을 입력해 주세요");
-                }else if ($('input[name=pingaree]').val() ==  null ) {
-        	        alert("이메일 인증번호를 입력해 주세요");
-                }else if ($('input[name=passwd]').val() ==  null ) {
-        	        alert("비밀번호를 입력해 주세요");
-                }else if ($('input[name=repasswd]').val() ==  null ) {
-        	        alert("재확인 비밀번호를 입력해 주세요");
-                }else if ($('input[name=tel]').val() ==  null ) {
-        	        alert("전화번호를 입력해 주세요");
-                }else if ($('input[name=tel2]').val() ==  null ) {
-        	        alert("전화번호를 입력해 주세요");
-                }else if ($('input[name=tel3]').val() ==  null ) {
-        	        alert("전화번호를 입력해 주세요");
-                }else {
-                	buttonjoin.setAttribute('type','submit');
-            	}
-            });
-        });
-	</script>
+<!-- sweetalert --> 
+<script src="${pageContext.request.contextPath}/assets/plugin/sweetalert/sweetalert2.all.min.js"></script>
 
 </head>
 
@@ -94,7 +65,6 @@
 	<!-- <div class="modal fade" id="myModal" class="siz">
 		<div class="modal-dialog siz modaltop"> -->
 			<div class="modal-content wholething sw" id="myModal">
-				<!-- modal-header -->
 				<div class="modal-header">
 					<h4 class="modal-title">회원가입</h4>
 					<!-- 닫기버튼 -->
@@ -109,42 +79,40 @@
 	                	</svg>
  	               </button>
  	            </div>
- 	            <form method="post" action="${pageContext.request.contextPath}/modal/join_ok.do">
- 	            <!-- modal-body -->
 				<div class="modal-body padding">
 					<div class="information clearfix">
 						<p class="subtitle">이름</p>
-						<input class="input1" type="text" name="name" id="name" class="full-wid input1" />
+						<input class="input1" type="text" name="userId" class="full-wid input1" />
 					</div>
 					<div class="information information2 clearfix">
 						<p class="subtitle">이메일</p>
-						<input type="text" name="email" class="email input1" id="email" />
+						<input type="text" name="useremail" class="email input1" />
 						<p class="wid">@</p>
-						<select class="select-email select1" name="email1" >
+						<select class="select-email select1">
 							<option>선택해주세요</option>
 							<option>naver.com</option>
 							<option>gmail.com</option>
 						</select>
-						<button type="button" class="btn btn-color inclick buttonre" id="insnumber" value="인증번호 요청">인증번호 요청</button>
+						<button class="btn btn-color inclick buttonre" id="insnumber" value="인증번호 요청">인증번호 요청</button>
 						<!-- data-toggle="modal" data-target="#requested" -->
 					</div>
 					<div class="information information2 numberdiv clearfix">
 						<p class="subtitle"></p>
 						<input type="text" name="pingaree" class="number input1" />
-						<button type="button" class="btn btn-color inclick buttonre" id="reinsnumber" value="인증번호 확인" >인증번호 확인</button>
+						<button class="btn btn-color inclick buttonre" id="reinsnumber" value="인증번호 확인" >인증번호 확인</button>
 						<!-- ata-toggle="modal" data-target="#requestednumber" -->
 					</div>
 					<div class="information information2 clearfix">
 						<p class="subtitle">비밀번호</p>
-						<input type="password" name="passwd" class="full-wid input1" placeholder="비밀번호" />
+						<input type="passwd" name="passwd" class="full-wid input1" placeholder="비밀번호" />
 					</div>
 					<div class="information information2 clearfix">
 						<p class="subtitle">비밀번호확인</p>
-						<input type="password" name="repasswd" class="full-wid input1" placeholder="비밀번호확인" />
+						<input type="passwd" name="repasswd" class="full-wid input1" placeholder="비밀번호확인" />
 					</div>
 					<div class="information information2 clearfix">
 						<p class="subtitle">휴대폰 번호</p>
-						<select class="select-tel pin select1" name="tel">
+						<select class="select-tel pin select1">
 							<option>010</option>
 							<option>011</option>
 							<option>016</option>
@@ -153,23 +121,18 @@
 							<option>019</option>
 						</select>
 						<p class="wid">-</p>
-						<input type="number" name="tel2" class="pin input1"/>
-						<p class="wid">-</p>
-						<input type="number" name="tel3" class="pin input1"/>
-					</div>
+						<input type="number" name="pin2" class="pin input1"/><p class="wid">-</p>
+						<input type="number" name="pin3" class="pin input1"/>
+					</div class="info Information">
 					<div class="Information3">
 						<p class="p">*만 14세 이상 회원 가입 가능합니다. 해당 내용은 <a href="#">이용약관 및 정책</a>에서도 확인이 가능합니다</p>
 					</div>
 				</div>
-				<!-- modal-footer -->
-				<div class="modal-footer mojoinfooter">
-					<button type="button" id="buttonjoin" class="buttonup btn btn-colordown buttontlzl">이메일 회원가입</button>
-					<!-- 회원가입했을 때 모달창을 띄워주고 싶으면 넣는 것 data-dismiss='modal' data-toggle="modal" data-target="#loginForward" -->
+				<div>
+					<button id="buttonjoin" class="buttonup btn btn-colordown buttontlzl" ata-toggle="modal" data-target="#loginForward">이메일 회원가입</button>
 				</div>
-				</form>
 			</div>
 			
-			<%-- 
 			<!-- 인증번호 Modal -->
 			<!-- <div class="modal fade" id="myModal" class="siz">
 		<div class="modal-dialog siz modaltop"> -->
@@ -265,6 +228,6 @@
 				</div>
 			</div>
 		</div>
-		--%>
+		
 		
 		

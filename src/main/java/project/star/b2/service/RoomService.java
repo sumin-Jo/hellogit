@@ -49,12 +49,5 @@ public interface RoomService {
      * @throws Exception
      */
     public int deleteRoom(Room input) throws Exception;
-    /**
-     * 매물 데이터 갤러리 목록 조회
-     * @return 조회 결과에 대한 컬렉션
-     * @throws Exception
-     */
-    public List<Room> getRoomGalleryList(Room input) throws Exception;
     
-	/* public List<Room> getRoomSelectList(Room input) throws Exception; */
 }

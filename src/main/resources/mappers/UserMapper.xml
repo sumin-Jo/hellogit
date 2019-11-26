@@ -65,7 +65,7 @@
     <insert id="insertItem"
         parameterType="project.star.b2.model.User"
         useGeneratedKeys="true"
-        keyProperty="no">
+        keyProperty="userno">
         INSERT INTO user (name, email, passwd, tel, regdate, editdate, profile_img) 
         VALUES (#{name}, #{email}, #{passwd}, #{tel}, #{regdate}, #{editdate}, #{profile_img});
     </insert>

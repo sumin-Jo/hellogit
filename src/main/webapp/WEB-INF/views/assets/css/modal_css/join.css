@@ -113,10 +113,6 @@ p.subtitle {
 .number { width: 320px; }
 
 /* 회원가입 버튼 */
-.mojoinfooter {
-    padding: 0px;
-}
-
 .btn-colordown {
 	color: white;
 	background-color: rgb(26, 90, 232);
